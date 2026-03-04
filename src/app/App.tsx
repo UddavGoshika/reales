@@ -14,6 +14,7 @@ import CategoryDetail from './pages/CategoryDetail';
 import AboutPage from './pages/AboutPage';
 import InvestPage from './pages/InvestPage';
 import RealEstatePage from './pages/RealEstatePage';
+import OpenPlotsPage from './pages/OpenPlotsPage';
 
 import { LuxuryDivider } from './components/ui/luxury-divider';
 import { FloatingActions } from './components/ui/FloatingActions';
@@ -80,7 +81,7 @@ export default function App() {
           </svg>
         </div>
 
-        <div className="relative z-[2] pt-[156px]">
+        <div className="relative z-[2] pt-0">
           <Navbar />
           <Routes>
             <Route path="/" element={<Home />} />
@@ -89,6 +90,7 @@ export default function App() {
             <Route path="/category/:type" element={<CategoryDetail />} />
             <Route path="/invest" element={<InvestPage />} />
             <Route path="/real-estate" element={<RealEstatePage />} />
+            <Route path="/open-plots" element={<OpenPlotsPage />} />
           </Routes>
           <Footer />
           <FloatingActions />

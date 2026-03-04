@@ -1,6 +1,6 @@
 import { motion } from 'motion/react';
 import { ImageWithFallback } from './figma/ImageWithFallback';
-import { Shield, Award, Diamond, Clock } from 'lucide-react';
+import { Shield, Award, Diamond, Clock, Building2, Globe, HeartPulse, Construction } from 'lucide-react';
 import { ArchitecturalCurves } from './ui/ArchitecturalCurves';
 
 const valuePoints = [
@@ -64,7 +64,7 @@ export function About() {
 
           {/* Floating Luxury Counter Card */}
           <div className="absolute -right-8 bottom-12 z-20 bg-[#1C1C1E] border border-[#C6A75E]/40 p-10 shadow-3xl max-w-[280px] rounded-[2rem]">
-            <span className="text-5xl text-[#C6A75E] block mb-2" style={{ fontFamily: "'Playfair Display', serif", fontWeight: 700 }}>30+</span>
+            <span className="text-5xl text-[#C6A75E] block mb-2" style={{ fontFamily: "'Playfair Display', serif", fontWeight: 700 }}>8</span>
             <span className="text-[10px] tracking-[4px] uppercase text-[#F5F5F5] font-bold">Years of Architectural Supremacy</span>
           </div>
         </motion.div>
@@ -93,10 +93,10 @@ export function About() {
             className="space-y-8"
           >
             <p className="text-[#B5B5B5] text-lg leading-relaxed font-light tracking-wide" style={{ fontFamily: "'DM Sans', sans-serif" }}>
-              Founded on the principles of architectural perfection and structural integrity, TATITO has spent over three decades curating the most exclusive residences in the world.
+              Founded on the principles of architectural perfection and structural integrity, TATITO has spent over eight years curating the most exclusive residences in the world.
             </p>
             <p className="text-[#B5B5B5] text-lg leading-relaxed font-light tracking-wide" style={{ fontFamily: "'DM Sans', sans-serif" }}>
-              We don't just build homes; we craft generational assets. Our properties are investments in a lifestyle of absolute privacy, sophisticated comfort, and timeless elegance.
+              We don't just build homes; we craft generational assets. Our properties are investments in a lifestyle of absolute privacy, sophisticated comfort, and timeless elegance for modern living.
             </p>
           </motion.div>
 
@@ -113,14 +113,14 @@ export function About() {
         </div>
       </div>
 
-      {/* 3. AUTHORITY SECTION: WHY CHOOSE US (UPGRADED) */}
+      {/* 3. AUTHORITY SECTION: THE PILLARS OF TATITO (8 GRIDS) */}
       <div className="bg-[#161618] border-y border-white/5 relative z-10 py-32 px-8">
         <div className="max-w-[1440px] mx-auto">
           <motion.div
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
-            className="text-center mb-24"
+            className="text-center mb-20"
           >
             <h2 className="text-3xl md:text-4xl text-[#C6A75E]" style={{ fontFamily: "'Playfair Display', serif", fontWeight: 700 }}>
               The Pillars of TATITO
@@ -128,31 +128,38 @@ export function About() {
             <div className="w-24 h-[1px] bg-gradient-to-r from-transparent via-[#C6A75E] to-transparent mx-auto mt-6" />
           </motion.div>
 
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-10 max-w-5xl mx-auto">
-            {valuePoints.map((point, index) => (
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
+            {[
+              { icon: <Shield />, title: 'Precision', desc: 'Meticulous architectural integrity in every structure we build, ensuring that every detail meets the highest global standards of luxury and safety.' },
+              { icon: <Award />, title: 'Excellence', desc: 'Award-winning standards in global real estate, recognized for our commitment to quality and architectural innovation across major territories.' },
+              { icon: <Diamond />, title: 'Bespoke', desc: 'Hand-curated properties for the elite lifestyle, designed for those who demand exclusivity and a personal touch in their living spaces.' },
+              { icon: <Clock />, title: 'Legacy', desc: 'Building generational wealth through timeless assets that appreciate over time, providing a secure and prestigious future for your family.' },
+              { icon: <Building2 />, title: 'Innovation', desc: 'Pioneering future-forward design philosophies that blend sustainable technology with classical high-end aesthetics for the modern homeowner.' },
+              { icon: <Globe />, title: 'Global', desc: 'Connecting world-class standards with local roots, bringing international luxury experiences to your doorstep with unparalleled precision.' },
+              { icon: <HeartPulse />, title: 'Wellness', desc: 'Prioritizing the health and comfort of residents through advanced air purification, natural light optimization, and holistic spatial design.' },
+              { icon: <Construction />, title: 'Quality', desc: 'Uncompromising build standards for longevity, using premium materials and expert craftsmanship to ensure your home stands the test of time.' }
+            ].map((pillar, index) => (
               <motion.div
                 key={index}
-                initial={{ opacity: 0, y: 30 }}
+                initial={{ opacity: 0, y: 20 }}
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true }}
-                transition={{ delay: index * 0.1, duration: 0.8 }}
-                className="group relative p-10 bg-[#1C1C1E] border border-[#C6A75E]/10 rounded-[2rem] overflow-hidden transition-all duration-700 hover:border-[#C6A75E]/60 hover:-translate-y-4 hover:shadow-[0_40px_80px_rgba(0,0,0,0.6)]"
+                transition={{ delay: index * 0.05, duration: 0.5 }}
+                className="group p-8 bg-[#1C1C1E] border border-[#C6A75E]/10 rounded-2xl hover:border-[#C6A75E]/40 transition-all duration-500"
               >
-                {/* Decorative Background Glow */}
-                <div className="absolute -top-20 -right-20 w-40 h-40 bg-[#C6A75E]/5 blur-[80px] group-hover:bg-[#C6A75E]/10 transition-all duration-700" />
-
-                <div className="relative z-10 flex flex-col items-center text-center">
-                  <div className="w-20 h-20 rounded-2xl bg-[#111113] border border-[#C6A75E]/20 flex items-center justify-center text-[#C6A75E] mb-10 group-hover:bg-[#C6A75E] group-hover:text-black group-hover:scale-110 group-hover:rotate-6 transition-all duration-700 shadow-xl">
-                    {point.icon}
+                <div className="flex flex-col gap-5">
+                  <div className="flex items-center gap-4">
+                    <div className="text-[#C6A75E] w-8 h-8 group-hover:scale-110 transition-transform duration-500 shrink-0">
+                      {pillar.icon}
+                    </div>
+                    <h4 className="text-xl text-[#F5F5F5]" style={{ fontFamily: "'Playfair Display', serif", fontWeight: 600 }}>{pillar.title}</h4>
                   </div>
-                  <h4 className="text-2xl mb-6 text-[#F5F5F5] tracking-tight" style={{ fontFamily: "'Playfair Display', serif", fontWeight: 600 }}>{point.title}</h4>
-                  <p className="text-[#7A7A7A] text-base leading-relaxed font-light group-hover:text-[#B5B5B5] transition-colors duration-500 max-w-sm">
-                    {point.description}
-                  </p>
+                  <div>
+                    <p className="text-[#7A7A7A] text-xs leading-relaxed group-hover:text-[#B5B5B5] transition-colors">
+                      {pillar.desc}
+                    </p>
+                  </div>
                 </div>
-
-                {/* Corner Accent Detail */}
-                <div className="absolute bottom-6 right-6 w-10 h-10 border-b border-r border-[#C6A75E]/0 group-hover:border-[#C6A75E]/30 transition-all duration-700" />
               </motion.div>
             ))}
           </div>

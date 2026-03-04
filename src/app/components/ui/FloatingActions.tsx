@@ -10,7 +10,7 @@ export function FloatingActions() {
         { icon: <Phone className="w-5 h-5" />, label: 'Call Us', color: '#C6A75E' },
         { icon: <Mail className="w-5 h-5" />, label: 'Contact Us', color: '#C6A75E' },
         { icon: <Calendar className="w-5 h-5" />, label: 'Schedule View', color: '#C6A75E' },
-        { icon: <FileText className="w-5 h-5" />, label: 'Brochure', color: '#C6A75E' },
+        // { icon: <FileText className="w-5 h-5" />, label: 'Brochure', color: '#C6A75E' },
     ];
 
     return (
@@ -39,14 +39,14 @@ export function FloatingActions() {
             {/* 2. BOTTOM ACTION BUTTONS */}
             <div className="fixed right-4 bottom-4 md:right-12 md:bottom-12 z-[200] flex flex-col md:flex-row items-end md:items-center gap-4 md:gap-6">
                 {/* Contact Us Button */}
-                <motion.button
+                {/* <motion.button
                     onClick={() => setIsFormOpen(true)}
                     initial={{ opacity: 0, y: 20 }}
                     animate={{ opacity: 1, y: 0 }}
                     className="px-6 py-4 md:px-10 md:py-5 bg-black/40 backdrop-blur-2xl border border-[#C6A75E]/60 text-[#C6A75E] text-[9px] md:text-[10px] tracking-[3px] md:tracking-[4px] font-black uppercase rounded-full hover:bg-[#C6A75E] hover:text-black transition-all duration-700 shadow-2xl"
                 >
                     Contact Us
-                </motion.button>
+                </motion.button> */}
 
                 {/* Get Brochure Button */}
                 <motion.button
@@ -56,7 +56,7 @@ export function FloatingActions() {
                 >
                     <div className="absolute inset-0 bg-white/20 -translate-x-full group-hover:translate-x-0 transition-transform duration-700" />
                     <FileText className="w-4 h-4 md:w-5 md:h-5 relative z-10" />
-                    <span className="text-[10px] md:text-[11px] tracking-[3px] md:tracking-[4px] font-black uppercase relative z-10">Get Brochure</span>
+                    <span className="text-[10px] md:text-[11px] tracking-[3px] md:tracking-[4px] font-black uppercase relative z-10">Book Site Visit</span>
                 </motion.button>
             </div>
 

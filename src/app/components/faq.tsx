@@ -46,7 +46,7 @@ export function FAQ() {
           >
             <span className="text-[#C6A75E] tracking-[6px] text-xs font-bold uppercase mb-4 block">Knowledge Base</span>
             <h2 className="text-4xl md:text-5xl mb-8 text-[#C6A75E]" style={{ fontFamily: "'Playfair Display', serif", fontWeight: 700 }}>
-              Frequently Asked <br /> <span className="text-[#F5F5F5] italic font-medium">Questions</span>
+              Frequently Asked <br /> <span className="text-[#F5F5F5]">Questions</span>
             </h2>
             <div className="w-24 h-[1px] bg-[#C6A75E] mb-12" />
             <p className="text-[#B5B5B5] text-lg leading-relaxed font-light mb-16 tracking-wide" style={{ fontFamily: "'DM Sans', sans-serif" }}>

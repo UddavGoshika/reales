@@ -60,7 +60,7 @@ export function Gallery() {
         >
           <span className="text-[#C6A75E] tracking-[6px] text-xs font-bold uppercase mb-4 block">Visual Curation</span>
           <h2 className="text-4xl md:text-5xl mb-6 text-[#C6A75E]" style={{ fontFamily: "'Playfair Display', serif", fontWeight: 700 }}>
-            Cinematic Immersion
+            Cinematic Immersion Gallery
           </h2>
           <div className="w-24 h-[1px] bg-gradient-to-r from-transparent via-[#C6A75E] to-transparent mx-auto mt-6" />
         </motion.div>

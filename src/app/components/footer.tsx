@@ -1,6 +1,9 @@
 import { motion } from 'motion/react';
-import { Linkedin, Twitter, Instagram, ArrowUp, Mail, Phone, MapPin } from 'lucide-react';
+import { Linkedin, Twitter, Instagram, ArrowUp, Mail, Phone, MapPin, Facebook, Youtube, AtSign } from 'lucide-react';
 import { Link } from 'react-router-dom';
+
+// @ts-ignore
+import navlogo from './figma/images/navlogo.png';
 
 export function Footer() {
   const scrollToTop = () => {
@@ -21,20 +24,44 @@ export function Footer() {
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-12 gap-16 mb-24">
 
           {/* Logo Brand Segment */}
-          <div className="lg:col-span-4 space-y-10">
-            <h2 className="text-4xl text-[#C6A75E] tracking-[6px]" style={{ fontFamily: "'Playfair Display', serif", fontWeight: 700 }}>
-              TATITO
-            </h2>
-            <p className="max-w-xs text-[#7A7A7A] text-sm leading-relaxed leading-relaxed font-light tracking-widest uppercase">
+          <div className="lg:col-span-4 space-y-8">
+            <div className="space-y-4">
+              <h2 className="text-4xl text-[#C6A75E] tracking-[6px]" style={{ fontFamily: "'Playfair Display', serif", fontWeight: 700 }}>
+                TATITO
+              </h2>
+              <Link to="/" className="block">
+                <img
+                  src={navlogo}
+                  alt="Tatito Logo"
+                  className="h-20 w-auto brightness-110 contrast-125 object-contain hover:scale-105 transition-transform duration-500 drop-shadow-[0_0_15px_rgba(198,167,94,0.2)]"
+                />
+              </Link>
+            </div>
+            <p className="max-w-xs text-[#7A7A7A] text-sm leading-relaxed font-light tracking-widest uppercase">
               The Gold Standard of Architecture and Investment Integrity. Globally Recognized for Excellence Since 1995.
             </p>
 
             {/* Social Icons Discovery Row */}
-            <div className="flex gap-8">
-              {[Linkedin, Twitter, Instagram].map((Icon, i) => (
-                <button key={i} className="text-[#C6A75E] hover:text-[#E8D8A0] transition-all duration-500 hover:shadow-[0_0_20px_rgba(198,167,94,0.4)]">
-                  <Icon className="w-5 h-5" />
-                </button>
+            <div className="flex flex-wrap gap-5">
+              {[
+                { Icon: Mail, href: 'mailto:tatitodevelopersandpromoters@gmail.com', label: 'Gmail' },
+                { Icon: Instagram, href: 'https://www.instagram.com/tatitodevelopersandpromoters/', label: 'Instagram' },
+                { Icon: Facebook, href: 'https://www.facebook.com/tatitodevelopersandpromoters', label: 'Facebook' },
+                { Icon: AtSign, href: 'https://www.threads.com/@tatitodevelopersandpromoters', label: 'Threads' },
+                { Icon: Linkedin, href: 'https://www.linkedin.com/company/tatito-developers-promoters/', label: 'LinkedIn' },
+                { Icon: Twitter, href: 'https://x.com/TatitoPromoters', label: 'X' },
+                { Icon: Youtube, href: 'https://www.youtube.com/channel/UCR6TzUQnfWGVHcy9qEHkTkw', label: 'Youtube' },
+              ].map((social, i) => (
+                <a
+                  key={i}
+                  href={social.href}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="w-10 h-10 rounded-full border border-[#C6A75E]/20 flex items-center justify-center text-[#C6A75E] hover:bg-[#C6A75E] hover:text-black transition-all duration-500 hover:shadow-[0_0_20px_rgba(198,167,94,0.4)] group"
+                  title={social.label}
+                >
+                  <social.Icon className="w-4 h-4 group-hover:scale-110 transition-transform" />
+                </a>
               ))}
             </div>
           </div>

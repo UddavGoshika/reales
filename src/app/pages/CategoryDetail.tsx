@@ -308,44 +308,59 @@ export default function CategoryDetail() {
 
     return (
         <div className="bg-[#0B0B0D] text-[#F5F5F5] min-h-screen selection:bg-[#C6A75E] selection:text-black">
-            {/* 1. CINEMATIC CATEGORY HERO - NOW FULL HEIGHT */}
-            <section className="relative h-screen flex items-center justify-center overflow-hidden">
-                <div className="absolute inset-0 z-0">
+            {/* 1. CINEMATIC CATEGORY HERO - FRAMED LAYOUT */}
+            <section className="relative h-screen flex items-center justify-center overflow-hidden bg-[#030304]">
+                {/* Blurred Backdrop */}
+                <div className="absolute inset-0 z-0 scale-110 blur-[80px] opacity-40">
                     <ImageWithFallback
                         src={data.heroImage}
-                        alt={data.title}
-                        className="w-full h-full object-cover brightness-[0.7]"
+                        alt="Backdrop"
+                        className="w-full h-full object-cover"
                     />
-                    <div className="absolute inset-0 bg-gradient-to-b from-black/60 via-transparent to-black/80" />
                 </div>
 
-                <div className="relative z-10 text-center px-8 w-full max-w-6xl">
-                    <motion.div
-                        initial={{ opacity: 0, y: 30 }}
-                        animate={{ opacity: 1, y: 0 }}
-                        transition={{ duration: 1 }}
-                    >
-                        <span className="text-[#C6A75E] tracking-[10px] uppercase text-[10px] font-bold mb-8 block opacity-80">{data.type}</span>
-                        <h1
-                            className="text-6xl md:text-9xl mb-12 text-[#F5F5F5]"
-                            style={{ fontFamily: "'Playfair Display', serif", fontWeight: 500 }}
-                        >
-                            {data.title}
-                        </h1>
-
-                        <div className="flex items-center justify-center gap-6 text-[10px] tracking-[4px] uppercase font-bold text-[#7A7A7A]">
-                            <Link to="/" className="hover:text-[#C6A75E] transition-colors">Home</Link>
-                            <ChevronRight className="w-3 h-3 text-[#C6A75E] rotate-0" />
-                            <span className="text-[#C6A75E] italic">Discover</span>
+                {/* Framed Image Container */}
+                <div className="absolute inset-0 px-2 md:px-4 pt-[190px] md:pt-[180px] pb-4 md:pb-8 z-10 flex items-center justify-center">
+                    <div className="relative w-full h-full rounded-none overflow-hidden border border-white/5 shadow-[0_40px_100px_rgba(0,0,0,0.8)] flex items-center justify-center">
+                        {/* Sharp Image */}
+                        <div className="absolute inset-0">
+                            <ImageWithFallback
+                                src={data.heroImage}
+                                alt={data.title}
+                                className="w-full h-full object-cover brightness-[0.7]"
+                            />
+                            <div className="absolute inset-0 bg-gradient-to-b from-black/60 via-transparent to-black/80" />
                         </div>
-                    </motion.div>
+
+                        {/* Content Inside Frame */}
+                        <div className="relative z-20 text-center px-8 w-full max-w-6xl">
+                            <motion.div
+                                initial={{ opacity: 0, y: 30 }}
+                                animate={{ opacity: 1, y: 0 }}
+                                transition={{ duration: 1 }}
+                            >
+                                <span className="text-[#C6A75E] tracking-[10px] uppercase text-[10px] font-bold mb-8 block opacity-80">{data.type}</span>
+                                <h1
+                                    className="text-6xl md:text-9xl mb-12 text-[#F5F5F5]"
+                                    style={{ fontFamily: "'Playfair Display', serif", fontWeight: 500 }}
+                                >
+                                    {data.title}
+                                </h1>
+
+                                <div className="flex items-center justify-center gap-6 text-[10px] tracking-[4px] uppercase font-bold text-[#7A7A7A]">
+                                    <Link to="/" className="hover:text-[#C6A75E] transition-colors">Home</Link>
+                                    <ChevronRight className="w-3 h-3 text-[#C6A75E] rotate-0" />
+                                    <span className="text-[#C6A75E] italic">Discover</span>
+                                </div>
+                            </motion.div>
+                        </div>
+                    </div>
                 </div>
 
-                <div className="absolute bottom-0 left-0 w-full h-[1px] bg-gradient-to-r from-transparent via-[#C6A75E]/30 to-transparent" />
+                <div className="absolute bottom-0 left-0 w-full h-[1px] bg-gradient-to-r from-transparent via-[#C6A75E]/30 to-transparent z-20" />
             </section>
 
-            {/* DYNAMIC DISCOVERY & FILTERING */}
-            <Projects />
+
 
             {/* 2. SIGNATURE OVERVIEW SECTION */}
             <section className="py-32 px-8 bg-[#0B0B0D] relative overflow-hidden">
@@ -714,120 +729,9 @@ export default function CategoryDetail() {
                 </div>
             </section>
 
-            {/* 5. CINEMATIC GALLERY SECTION */}
-            <section className="py-32 px-8 relative overflow-hidden bg-[#0B0B0D]">
-                <div className="absolute inset-4 border border-[#C6A75E]/10 rounded-[3rem] pointer-events-none z-[1]" />
-                <div className="absolute top-0 left-0 w-full h-full bg-[radial-gradient(circle_at_70%_50%,rgba(198,167,94,0.05)_0%,transparent_70%)] pointer-events-none" />
 
-                <div className="max-w-[1440px] mx-auto relative z-10">
-                    <motion.div
-                        initial={{ opacity: 0, y: 30 }}
-                        whileInView={{ opacity: 1, y: 0 }}
-                        viewport={{ once: true }}
-                        className="text-center mb-20"
-                    >
-                        <span className="text-[#C6A75E] tracking-[8px] text-[10px] font-bold uppercase mb-4 block">Visual Curation</span>
-                        <h2 className="text-5xl md:text-7xl text-[#F5F5F5] font-serif italic" style={{ fontWeight: 500 }}>
-                            Cinematic <span className="text-[#C6A75E] not-italic">Gallery</span>
-                        </h2>
-                        <div className="w-24 h-[1px] bg-gradient-to-r from-transparent via-[#C6A75E] to-transparent mx-auto mt-8" />
-                    </motion.div>
 
-                    <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
-                        {data.gallery.map((item: any, idx: number) => (
-                            <motion.div
-                                key={idx}
-                                initial={{ opacity: 0, y: 30 }}
-                                whileInView={{ opacity: 1, y: 0 }}
-                                viewport={{ once: true }}
-                                transition={{ delay: idx * 0.1, duration: 1 }}
-                                className="group relative overflow-hidden bg-[#161618] border border-[#C6A75E]/20 aspect-[4/3]"
-                            >
-                                <img
-                                    src={item.src}
-                                    alt={item.caption}
-                                    className="w-full h-full object-cover transition-transform duration-[3000ms] group-hover:scale-110"
-                                />
-                                <div className="absolute inset-0 bg-gradient-to-t from-black via-transparent to-transparent opacity-60" />
-                                <div className="absolute bottom-8 left-8 translate-y-4 group-hover:translate-y-0 opacity-0 group-hover:opacity-100 transition-all duration-700">
-                                    <span className="text-[#C6A75E] text-[10px] tracking-[6px] font-bold uppercase border-l-2 border-[#C6A75E] pl-4">{item.caption}</span>
-                                </div>
-                            </motion.div>
-                        ))}
-                    </div>
-                </div>
-            </section >
 
-            {/* 6. IMMERSIVE EXPERIENCE IMAGES SECTION */}
-            < section className="py-40 bg-[#111113] relative overflow-hidden" >
-                <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 text-[15rem] font-bold text-white/[0.02] select-none pointer-events-none uppercase whitespace-nowrap" style={{ fontFamily: "'Playfair Display', serif" }}>
-                    Experience
-                </div>
-
-                <div className="max-w-[1440px] mx-auto px-8 relative z-10">
-                    <div className="grid grid-cols-1 lg:grid-cols-2 gap-32 items-center">
-                        <motion.div
-                            initial={{ opacity: 0, x: -50 }}
-                            whileInView={{ opacity: 1, x: 0 }}
-                            viewport={{ once: true }}
-                            transition={{ duration: 1 }}
-                            className="space-y-16"
-                        >
-                            <div className="space-y-6">
-                                <div className="flex items-center gap-4">
-                                    <div className="w-12 h-[1px] bg-[#C6A75E]" />
-                                    <span className="text-[#C6A75E] tracking-[8px] text-[10px] font-bold uppercase">The Lifestyle</span>
-                                </div>
-                                <h2 className="text-5xl md:text-8xl text-[#F5F5F5] leading-tight font-serif" style={{ fontWeight: 600 }}>
-                                    {data.experience.title.split(' ')[0]} <br />
-                                    <span className="text-[#C6A75E] italic">{data.experience.title.split(' ').slice(1).join(' ')}</span>
-                                </h2>
-                            </div>
-
-                            <p className="text-[#B5B5B5] text-xl leading-relaxed font-light font-body lowercase tracking-widest max-w-xl">
-                                {data.experience.description || data.description}
-                            </p>
-
-                            <div className="grid grid-cols-1 md:grid-cols-2 gap-x-12 gap-y-10">
-                                {data.experience.features.map((feature: string, i: number) => (
-                                    <div key={i} className="flex flex-col gap-4 group">
-                                        <div className="flex items-center gap-4">
-                                            <div className="w-2 h-2 rounded-full border border-[#C6A75E] group-hover:bg-[#C6A75E] transition-all duration-500" />
-                                            <span className="text-[#F5F5F5] text-[10px] tracking-[4px] uppercase font-bold group-hover:text-[#C6A75E] transition-colors">{feature}</span>
-                                        </div>
-                                    </div>
-                                ))}
-                            </div>
-
-                            <button className="group relative px-12 py-6 bg-transparent border border-[#C6A75E]/40 text-[#C6A75E] font-bold text-[10px] tracking-[6px] uppercase overflow-hidden transition-all duration-700">
-                                <span className="relative z-10 group-hover:text-black transition-colors duration-500">Book A Private View</span>
-                                <div className="absolute inset-0 bg-[#C6A75E] -translate-x-full group-hover:translate-x-0 transition-transform duration-700 ease-out z-0" />
-                            </button>
-                        </motion.div>
-
-                        <motion.div
-                            initial={{ opacity: 0, scale: 0.9 }}
-                            whileInView={{ opacity: 1, scale: 1 }}
-                            viewport={{ once: true }}
-                            transition={{ duration: 1.5 }}
-                            className="relative"
-                        >
-                            <div className="absolute -inset-8 border border-[#C6A75E]/10 rounded-[3rem] -z-1" />
-                            <div className="relative aspect-[4/5] overflow-hidden rounded-[2rem] border border-[#C6A75E]/30 shadow-3xl">
-                                <img
-                                    src={data.experience.image}
-                                    alt="Experience"
-                                    className="w-full h-full object-cover hover:scale-105 transition-all duration-[3000ms]"
-                                />
-                                <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-transparent to-transparent" />
-                                <div className="absolute bottom-12 left-12">
-                                    <Diamond className="w-12 h-12 text-[#C6A75E] animate-pulse" />
-                                </div>
-                            </div>
-                        </motion.div>
-                    </div>
-                </div>
-            </section >
 
             {/* 7. READY TO EXPERIENCE CTA */}
             < section className="relative py-40 overflow-hidden group" >

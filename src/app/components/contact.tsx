@@ -1,5 +1,5 @@
 import { motion } from 'motion/react';
-import { Mail, Phone, MapPin, Landmark, Globe } from 'lucide-react';
+import { Mail, Phone, MapPin, Landmark, Globe, ChevronDown } from 'lucide-react';
 import { ArchitecturalCurves } from './ui/ArchitecturalCurves';
 
 export function Contact() {
@@ -90,7 +90,7 @@ export function Contact() {
             </div>
 
             {/* Interactive Map Visual */}
-            <div className="bg-[#161618] border border-[#C6A75E]/20 h-[380px] overflow-hidden grayscale contrast-125 brightness-75 hover:grayscale-0 hover:contrast-100 hover:brightness-100 transition-all duration-2000">
+            {/* <div className="bg-[#161618] border border-[#C6A75E]/20 h-[380px] overflow-hidden grayscale contrast-125 brightness-75 hover:grayscale-0 hover:contrast-100 hover:brightness-100 transition-all duration-2000">
               <iframe
                 src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d121600.51475877478!2d83.17878345155949!3d17.723127599059762!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3a39431389e6973d%3A0xfe819d5943f3d57c!2sVisakhapatnam%2C%20Andhra%20Pradesh!5e0!3m2!1sen!2sin!4v1709400000000!5m2!1sen!2sin"
                 width="100%"
@@ -101,7 +101,7 @@ export function Contact() {
                 referrerPolicy="no-referrer-when-downgrade"
                 className="w-full h-full"
               />
-            </div>
+            </div> */}
           </motion.div>
 
           {/* Luxury Form System Column */}
@@ -116,43 +116,56 @@ export function Contact() {
             <div className="bg-[#161618] border border-[#C6A75E]/20 p-12 shadow-[0_30px_100px_rgba(0,0,0,0.8)] relative z-10 transition-all duration-1000 hover:shadow-[0_40px_120px_rgba(198,167,94,0.15)] group rounded-[2.5rem]">
 
               {/* Form Grouping with Floating Labels Logic */}
-              <div className="space-y-12">
-                <div className="grid grid-cols-1 md:grid-cols-2 gap-12">
-                  {['First Name', 'Last Name'].map((label, i) => (
-                    <div key={i} className="relative group/field">
-                      <input
-                        type="text"
-                        placeholder=" "
-                        className="w-full bg-transparent border-b border-[#C6A75E]/20 py-4 text-[#F5F5F5] focus:outline-none focus:border-[#C6A75E] transition-all duration-700 peer"
-                      />
-                      <label className="absolute left-0 top-4 text-[#7A7A7A] transition-all duration-500 pointer-events-none peer-focus:-top-4 peer-focus:text-[10px] peer-focus:tracking-[4px] peer-focus:uppercase peer-focus:text-[#C6A75E] peer-[:not(:placeholder-shown)]:-top-4 peer-[:not(:placeholder-shown)]:text-[10px] peer-[:not(:placeholder-shown)]:tracking-[4px] peer-[:not(:placeholder-shown)]:uppercase peer-[:not(:placeholder-shown)]:text-[#C6A75E]">
-                        {label}
-                      </label>
-                    </div>
-                  ))}
+              <div className="space-y-10">
+                <div className="grid grid-cols-1 md:grid-cols-2 gap-10">
+                  <div className="relative group/field">
+                    <input type="text" placeholder=" " className="w-full bg-transparent border-b border-[#C6A75E]/20 py-4 text-[#F5F5F5] focus:outline-none focus:border-[#C6A75E] transition-all duration-700 peer" />
+                    <label className="absolute left-0 top-4 text-[#7A7A7A] transition-all duration-500 pointer-events-none peer-focus:-top-4 peer-focus:text-[10px] peer-focus:tracking-[4px] peer-focus:uppercase peer-focus:text-[#C6A75E] peer-[:not(:placeholder-shown)]:-top-4 peer-[:not(:placeholder-shown)]:text-[10px] peer-[:not(:placeholder-shown)]:tracking-[4px] peer-[:not(:placeholder-shown)]:uppercase peer-[:not(:placeholder-shown)]:text-[#C6A75E]">First Name</label>
+                  </div>
+                  <div className="relative group/field">
+                    <input type="text" placeholder=" " className="w-full bg-transparent border-b border-[#C6A75E]/20 py-4 text-[#F5F5F5] focus:outline-none focus:border-[#C6A75E] transition-all duration-700 peer" />
+                    <label className="absolute left-0 top-4 text-[#7A7A7A] transition-all duration-500 pointer-events-none peer-focus:-top-4 peer-focus:text-[10px] peer-focus:tracking-[4px] peer-focus:uppercase peer-focus:text-[#C6A75E] peer-[:not(:placeholder-shown)]:-top-4 peer-[:not(:placeholder-shown)]:text-[10px] peer-[:not(:placeholder-shown)]:tracking-[4px] peer-[:not(:placeholder-shown)]:uppercase peer-[:not(:placeholder-shown)]:text-[#C6A75E]">Last Name</label>
+                  </div>
                 </div>
 
-                {['Corporate Email Address', 'Phone Number'].map((label, i) => (
-                  <div key={i} className="relative group/field">
-                    <input
-                      type="text"
-                      placeholder=" "
-                      className="w-full bg-transparent border-b border-[#C6A75E]/20 py-4 text-[#F5F5F5] focus:outline-none focus:border-[#C6A75E] transition-all duration-700 peer"
-                    />
-                    <label className="absolute left-0 top-4 text-[#7A7A7A] transition-all duration-500 pointer-events-none peer-focus:-top-4 peer-focus:text-[10px] peer-focus:tracking-[4px] peer-focus:uppercase peer-focus:text-[#C6A75E] peer-[:not(:placeholder-shown)]:-top-4 peer-[:not(:placeholder-shown)]:text-[10px] peer-[:not(:placeholder-shown)]:tracking-[4px] peer-[:not(:placeholder-shown)]:uppercase peer-[:not(:placeholder-shown)]:text-[#C6A75E]">
-                      {label}
-                    </label>
+                <div className="grid grid-cols-1 md:grid-cols-2 gap-10">
+                  <div className="relative group/field">
+                    <input type="email" placeholder=" " className="w-full bg-transparent border-b border-[#C6A75E]/20 py-4 text-[#F5F5F5] focus:outline-none focus:border-[#C6A75E] transition-all duration-700 peer" />
+                    <label className="absolute left-0 top-4 text-[#7A7A7A] transition-all duration-500 pointer-events-none peer-focus:-top-4 peer-focus:text-[10px] peer-focus:tracking-[4px] peer-focus:uppercase peer-focus:text-[#C6A75E] peer-[:not(:placeholder-shown)]:-top-4 peer-[:not(:placeholder-shown)]:text-[10px] peer-[:not(:placeholder-shown)]:tracking-[4px] peer-[:not(:placeholder-shown)]:uppercase peer-[:not(:placeholder-shown)]:text-[#C6A75E]">Email Address</label>
                   </div>
-                ))}
+                  <div className="relative group/field">
+                    <input type="tel" placeholder=" " className="w-full bg-transparent border-b border-[#C6A75E]/20 py-4 text-[#F5F5F5] focus:outline-none focus:border-[#C6A75E] transition-all duration-700 peer" />
+                    <label className="absolute left-0 top-4 text-[#7A7A7A] transition-all duration-500 pointer-events-none peer-focus:-top-4 peer-focus:text-[10px] peer-focus:tracking-[4px] peer-focus:uppercase peer-focus:text-[#C6A75E] peer-[:not(:placeholder-shown)]:-top-4 peer-[:not(:placeholder-shown)]:text-[10px] peer-[:not(:placeholder-shown)]:tracking-[4px] peer-[:not(:placeholder-shown)]:uppercase peer-[:not(:placeholder-shown)]:text-[#C6A75E]">Phone Number</label>
+                  </div>
+                </div>
+
+                <div className="relative group/field">
+                  <input type="text" placeholder=" " className="w-full bg-transparent border-b border-[#C6A75E]/20 py-4 text-[#F5F5F5] focus:outline-none focus:border-[#C6A75E] transition-all duration-700 peer" />
+                  <label className="absolute left-0 top-4 text-[#7A7A7A] transition-all duration-500 pointer-events-none peer-focus:-top-4 peer-focus:text-[10px] peer-focus:tracking-[4px] peer-focus:uppercase peer-focus:text-[#C6A75E] peer-[:not(:placeholder-shown)]:-top-4 peer-[:not(:placeholder-shown)]:text-[10px] peer-[:not(:placeholder-shown)]:tracking-[4px] peer-[:not(:placeholder-shown)]:uppercase peer-[:not(:placeholder-shown)]:text-[#C6A75E]">Residential Address</label>
+                </div>
+
+                <div className="relative group/field">
+                  <select className="w-full bg-transparent border-b border-[#C6A75E]/20 py-4 text-[#F5F5F5] focus:outline-none focus:border-[#C6A75E] transition-all duration-700 appearance-none">
+                    <option value="" className="bg-[#111113]">What are you looking for?</option>
+                    <option value="plots" className="bg-[#111113]">Premium Open Plots</option>
+                    <option value="apartments" className="bg-[#111113]">Luxury Apartments</option>
+                    <option value="villas" className="bg-[#111113]">Bespoke Villas</option>
+                    <option value="investment" className="bg-[#111113]">Strategic Land Investment</option>
+                    <option value="commercial" className="bg-[#111113]">Commercial Opportunities</option>
+                  </select>
+                  <div className="absolute right-0 bottom-4 pointer-events-none">
+                    <ChevronDown className="w-4 h-4 text-[#C6A75E]" />
+                  </div>
+                </div>
 
                 <div className="relative pt-4">
                   <textarea
-                    rows={4}
+                    rows={3}
                     placeholder=" "
                     className="w-full bg-transparent border-b border-[#C6A75E]/20 py-4 text-[#F5F5F5] focus:outline-none focus:border-[#C6A75E] transition-all duration-700 peer resize-none"
                   />
                   <label className="absolute left-0 top-8 text-[#7A7A7A] transition-all duration-500 pointer-events-none peer-focus:top-0 peer-focus:text-[10px] peer-focus:tracking-[4px] peer-focus:uppercase peer-focus:text-[#C6A75E] peer-[:not(:placeholder-shown)]:top-0 peer-[:not(:placeholder-shown)]:text-[10px] peer-[:not(:placeholder-shown)]:tracking-[4px] peer-[:not(:placeholder-shown)]:uppercase peer-[:not(:placeholder-shown)]:text-[#C6A75E]">
-                    Consultation Requirements
+                    Additional Investment Details
                   </label>
                 </div>
 

@@ -230,108 +230,120 @@ export default function ProjectDetail() {
                 </Link>
             </div>
 
-            <section className="relative h-[100vh] w-full flex items-end justify-center overflow-hidden pb-24">
-                <motion.div
-                    initial={{ scale: 1.1, opacity: 0 }}
-                    animate={{ scale: 1, opacity: 1 }}
-                    transition={{ duration: 2 }}
-                    className="absolute inset-0"
-                >
+            <section className="relative h-[100vh] w-full flex items-center justify-center overflow-hidden bg-[#030304]">
+                {/* Blurred Backdrop */}
+                <div className="absolute inset-0 z-0 scale-110 blur-[80px] opacity-40">
                     <img
                         src={project.heroImage}
-                        alt={project.name}
-                        className="w-full h-full object-cover brightness-[0.7]"
+                        alt="Backdrop"
+                        className="w-full h-full object-cover"
                     />
-                    <div className="absolute inset-0 bg-gradient-to-b from-black/60 via-transparent to-black/80 opacity-100" />
-                </motion.div>
+                </div>
 
-                <div className="relative z-10 text-center px-8 w-full max-w-7xl">
-                    <motion.div
-                        initial={{ opacity: 0, y: 50 }}
-                        animate={{ opacity: 1, y: 0 }}
-                        transition={{ duration: 1.2 }}
-                        className="flex flex-col items-center"
-                    >
-                        <span className="text-[#C6A75E] tracking-[10px] uppercase text-[10px] font-black mb-6 block opacity-90">{project.developer}</span>
-                        <h1 className="text-6xl md:text-9xl mb-12 text-[#F5F5F5]" style={{ fontFamily: "'Playfair Display', serif", fontWeight: 700, lineHeight: 1.1 }}>
-                            {project.name.split(' ')[0]} <span className="text-[#C6A75E] italic whitespace-nowrap">{project.name.split(' ')[1]}</span>
-                        </h1>
-
-                        {/* HIGH-END STATS ROW - CLEANED & CENTERED */}
-                        <div className="flex flex-wrap items-center justify-center gap-x-12 backdrop-blur-md p-1 gap-y-6 mb-16 max-w-5xl mx-auto">
-                            <div className="flex items-center gap-3">
-                                <div className="p-2 border border-[#C6A75E]/20 rounded-lg">
-                                    <MapPin className="w-4 h-4 text-[#C6A75E]" />
-                                </div>
-                                <div className="text-left">
-                                    <span className="text-[9px] tracking-[3px] uppercase text-[#7A7A7A] block mb-1">Location</span>
-                                    <span className="text-[11px] tracking-[2px] uppercase text-[#F5F5F5] font-black">{project.location}</span>
-                                </div>
-                            </div>
-
-                            <div className="h-10 w-[1px] bg-white/10 hidden md:block" />
-
-                            <div className="flex items-center gap-3">
-                                <div className="p-2 border border-[#C6A75E]/20 rounded-lg">
-                                    <Ruler className="w-4 h-4 text-[#C6A75E]" />
-                                </div>
-                                <div className="text-left">
-                                    <span className="text-[9px] tracking-[3px] uppercase text-[#7A7A7A] block mb-1">Dimensions</span>
-                                    <span className="text-[11px] tracking-[2px] uppercase text-[#F5F5F5] font-black">{project.sqft} SQ FT</span>
-                                </div>
-                            </div>
-
-                            <div className="h-10 w-[1px] bg-white/10 hidden md:block" />
-
-                            <div className="flex items-center gap-3">
-                                <div className="p-2 border border-[#C6A75E]/20 rounded-lg">
-                                    <Globe className="w-4 h-4 text-[#C6A75E]" />
-                                </div>
-                                <div className="text-left">
-                                    <span className="text-[9px] tracking-[3px] uppercase text-[#7A7A7A] block mb-1">Distance</span>
-                                    <span className="text-[11px] tracking-[2px] uppercase text-[#F5F5F5] font-black">{project.distance.split(' ')[0]} {project.distance.split(' ')[1]} {project.distance.split(' ')[2]}</span>
-                                </div>
-                            </div>
-
-                            <div className="h-10 w-[1px] bg-white/10 hidden md:block" />
-
-                            <div className="flex items-center gap-3 px-6 py-3 bg-green-500/10 border border-green-500/30 rounded-xl">
-                                <ShieldCheck className="w-4 h-4 text-green-500" />
-                                <span className="text-[10px] tracking-[3px] font-black text-green-500 uppercase">VMRDA APPROVED</span>
-                            </div>
+                {/* Framed Content Container */}
+                <div className="absolute inset-0 px-2 md:px-4 pt-[190px] md:pt-[180px] pb-4 md:pb-8 z-10 flex items-center justify-center">
+                    <div className="relative w-full h-full rounded-none overflow-hidden border border-white/5 shadow-[0_40px_100px_rgba(0,0,0,0.8)] flex items-end justify-center pb-12 md:pb-20">
+                        {/* Sharp Image Layer */}
+                        <div className="absolute inset-0">
+                            <img
+                                src={project.heroImage}
+                                alt={project.name}
+                                className="w-full h-full object-cover brightness-[0.7]"
+                            />
+                            <div className="absolute inset-0 bg-gradient-to-b from-black/60 via-transparent to-black/95" />
                         </div>
 
-                        {/* HIGH-END PRICING PLACUE (Wooden Design Concept) */}
-                        <div className="relative inline-block group">
-                            <div className="absolute -inset-1 bg-gradient-to-r from-[#8B4513] via-[#C6A75E] to-[#8B4513] rounded-3xl opacity-40 blur group-hover:opacity-60 transition duration-1000" />
-                            <div className="relative px-16 py-10 bg-[#1B120B] border border-[#C6A75E]/30 rounded-3xl shadow-2xl flex flex-col md:flex-row items-center gap-16 overflow-hidden">
-                                <div className="absolute inset-0 opacity-10 pointer-events-none bg-[url('https://www.transparenttextures.com/patterns/wood-pattern.png')]" />
+                        {/* Centered Content Plane */}
+                        <div className="relative z-20 text-center px-8 w-full max-w-6xl flex flex-col items-center">
+                            <motion.div
+                                initial={{ opacity: 0, y: 50 }}
+                                animate={{ opacity: 1, y: 0 }}
+                                transition={{ duration: 1.2 }}
+                                className="flex flex-col items-center w-full"
+                            >
+                                <span className="text-[#C6A75E] tracking-[10px] uppercase text-[10px] font-black mb-6 block opacity-90">{project.developer}</span>
 
-                                <div className="relative z-10 text-left">
-                                    <div className="flex items-baseline gap-4 mb-2">
-                                        <span className="text-[#C6A75E]/40 line-through text-2xl font-serif">{project.originalPrice}</span>
-                                        <span className="text-white text-6xl font-serif font-bold italic tracking-wider">{project.currentPrice}</span>
+                                <h1 className="text-5xl md:text-8xl mb-12 text-[#F5F5F5]" style={{ fontFamily: "'Playfair Display', serif", fontWeight: 700, lineHeight: 1.1 }}>
+                                    {project.name.split(' ')[0]} <span className="text-[#C6A75E] italic whitespace-nowrap">{project.name.split(' ')[1]}</span>
+                                </h1>
+
+                                {/* Stats Row */}
+                                <div className="flex flex-wrap items-center justify-center gap-x-8 md:gap-x-12 p-1 gap-y-6 mb-12 max-w-5xl mx-auto">
+                                    <div className="flex items-center gap-3">
+                                        <div className="p-2 border border-[#C6A75E]/20 rounded-lg">
+                                            <MapPin className="w-4 h-4 text-[#C6A75E]" />
+                                        </div>
+                                        <div className="text-left">
+                                            <span className="text-[9px] tracking-[3px] uppercase text-[#7A7A7A] block mb-1">Location</span>
+                                            <span className="text-[11px] tracking-[2px] uppercase text-[#F5F5F5] font-black">{project.location}</span>
+                                        </div>
                                     </div>
-                                    <span className="text-[10px] tracking-[4px] uppercase text-[#C6A75E] font-black">Limited Launch Offer</span>
+
+                                    <div className="h-8 w-[1px] bg-white/10 hidden md:block" />
+
+                                    <div className="flex items-center gap-3">
+                                        <div className="p-2 border border-[#C6A75E]/20 rounded-lg">
+                                            <Ruler className="w-4 h-4 text-[#C6A75E]" />
+                                        </div>
+                                        <div className="text-left">
+                                            <span className="text-[9px] tracking-[3px] uppercase text-[#7A7A7A] block mb-1">Dimensions</span>
+                                            <span className="text-[11px] tracking-[2px] uppercase text-[#F5F5F5] font-sans font-bold">{project.sqft} SQ FT</span>
+                                        </div>
+                                    </div>
+
+                                    <div className="h-8 w-[1px] bg-white/10 hidden md:block" />
+
+                                    <div className="flex items-center gap-3">
+                                        <div className="p-2 border border-[#C6A75E]/20 rounded-lg">
+                                            <Globe className="w-4 h-4 text-[#C6A75E]" />
+                                        </div>
+                                        <div className="text-left">
+                                            <span className="text-[9px] tracking-[3px] uppercase text-[#7A7A7A] block mb-1">Distance</span>
+                                            <span className="text-[11px] tracking-[2px] uppercase text-[#F5F5F5] font-black">
+                                                {project.distance}
+                                            </span>
+                                        </div>
+                                    </div>
+
+                                    <div className="h-8 w-[1px] bg-white/10 hidden md:block" />
+
+                                    <div className="flex flex-col items-center gap-2 group/vmrda">
+                                        <span className="text-[8px] tracking-[4px] font-black text-white/40 uppercase">VMRDA APPROVED</span>
+                                        <div className="w-12 h-12 rounded-full border border-[#C6A75E]/20 bg-white/[0.03] backdrop-blur-3xl p-2.5 flex items-center justify-center">
+                                            <img src={vmrdaLogo} alt="VMRDA" className="w-full h-full object-contain" />
+                                        </div>
+                                    </div>
                                 </div>
 
-                                <div className="h-12 w-[1px] bg-[#C6A75E]/20 hidden md:block" />
-
-                                <div className="relative z-10 text-center md:text-left">
-                                    <h4 className="text-white text-2xl font-serif tracking-widest mb-3 italic">Per SQ. YARD ONLY*</h4>
-                                    <div className="flex items-center justify-center md:justify-start gap-4">
-                                        <div className="h-[2px] w-10 bg-[#C6A75E]" />
-                                        <span className="text-[10px] tracking-[3px] uppercase text-[#7A7A7A] font-black">Secured Investment Asset</span>
+                                {/* Pricing Plaque */}
+                                <div className="relative inline-block group">
+                                    <div className="absolute -inset-1 bg-gradient-to-r from-[#8B4513] via-[#C6A75E] to-[#8B4513] rounded-3xl opacity-30 blur group-hover:opacity-50 transition duration-1000" />
+                                    <div className="relative px-8 md:px-16 py-6 md:py-8 bg-[#1B120B] border border-[#C6A75E]/20 rounded-2xl shadow-2xl flex flex-col md:flex-row items-center gap-8 md:gap-16 overflow-hidden">
+                                        <div className="absolute inset-0 opacity-5 pointer-events-none bg-[url('https://www.transparenttextures.com/patterns/wood-pattern.png')]" />
+                                        <div className="relative z-10 text-left">
+                                            <div className="flex items-baseline gap-4 mb-1">
+                                                <span className="text-[#C6A75E]/30 line-through text-lg font-serif">{project.originalPrice}</span>
+                                                <span className="text-white text-4xl md:text-5xl font-serif font-bold italic tracking-wider">{project.currentPrice}</span>
+                                            </div>
+                                            <span className="text-[8px] tracking-[4px] uppercase text-[#C6A75E]/60 font-black">Investment Priority</span>
+                                        </div>
+                                        <div className="h-10 w-[1px] bg-[#C6A75E]/10 hidden md:block" />
+                                        <div className="relative z-10 text-center md:text-left">
+                                            <h4 className="text-white text-xl font-sans tracking-[4px] mb-2 uppercase font-medium">{project.unit}</h4>
+                                            <div className="flex items-center justify-center md:justify-start gap-4">
+                                                <div className="h-[1px] w-8 bg-[#C6A75E]/40" />
+                                                <span className="text-[9px] tracking-[3px] uppercase text-[#7A7A7A] font-bold">Limited Availability</span>
+                                            </div>
+                                        </div>
                                     </div>
                                 </div>
-                            </div>
+                            </motion.div>
                         </div>
-                    </motion.div>
+                    </div>
                 </div>
             </section>
 
-            {/* DYNAMIC DISCOVERY & FILTERING */}
-            <Projects />
+
 
             {/* 1.5 SIGNATURE ABOUT SECTION */}
             <section className="py-32 px-8 bg-[#0B0B0D] relative overflow-hidden">
@@ -496,50 +508,10 @@ export default function ProjectDetail() {
                 </div>
             </section>
 
-            {/* 3.5 CINEMATIC GALLERY SECTION */}
-            <section className="py-32 px-8 relative overflow-hidden bg-[#0B0B0D]">
-                <div className="absolute inset-4 border border-[#C6A75E]/10 rounded-[3rem] pointer-events-none z-[1]" />
-                <div className="max-w-[1440px] mx-auto relative z-10">
-                    <motion.div
-                        initial={{ opacity: 0, y: 30 }}
-                        whileInView={{ opacity: 1, y: 0 }}
-                        viewport={{ once: true }}
-                        className="text-center mb-20"
-                    >
-                        <span className="text-[#C6A75E] tracking-[8px] text-[10px] font-bold uppercase mb-4 block">Visual Curation</span>
-                        <h2 className="text-5xl md:text-7xl text-[#F5F5F5] font-serif italic" style={{ fontWeight: 500 }}>
-                            Project <span className="text-[#C6A75E] not-italic">Gallery</span>
-                        </h2>
-                        <div className="w-24 h-[1px] bg-gradient-to-r from-transparent via-[#C6A75E] to-transparent mx-auto mt-8" />
-                    </motion.div>
 
-                    <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
-                        {(project as any).gallery?.map((item: any, idx: number) => (
-                            <motion.div
-                                key={idx}
-                                initial={{ opacity: 0, y: 30 }}
-                                whileInView={{ opacity: 1, y: 0 }}
-                                viewport={{ once: true }}
-                                transition={{ delay: idx * 0.1, duration: 1 }}
-                                className="group relative overflow-hidden bg-[#161618] border border-[#C6A75E]/20 aspect-[4/3]"
-                            >
-                                <img
-                                    src={item.src}
-                                    alt={item.caption}
-                                    className="w-full h-full object-cover transition-transform duration-[3000ms] group-hover:scale-110"
-                                />
-                                <div className="absolute inset-0 bg-gradient-to-t from-black via-transparent to-transparent opacity-60" />
-                                <div className="absolute bottom-8 left-8 translate-y-4 group-hover:translate-y-0 opacity-0 group-hover:opacity-100 transition-all duration-700">
-                                    <span className="text-[#C6A75E] text-[10px] tracking-[6px] font-bold uppercase border-l-2 border-[#C6A75E] pl-4">{item.caption}</span>
-                                </div>
-                            </motion.div>
-                        ))}
-                    </div>
-                </div>
-            </section>
 
             {/* 3.6 TECHNICAL DETAILS TABS */}
-            <section className="py-32 px-8 relative overflow-hidden bg-[#111113]">
+            < section className="py-32 px-8 relative overflow-hidden bg-[#111113]" >
                 <div className="absolute inset-4 border border-[#C6A75E]/5 rounded-[3rem] pointer-events-none" />
 
                 <div className="max-w-[1440px] mx-auto relative z-10">
@@ -757,7 +729,7 @@ export default function ProjectDetail() {
                 <div className="absolute bottom-0 right-0 w-full h-full bg-[radial-gradient(circle_at_70%_70%,rgba(198,167,94,0.05)_0%,transparent_60%)] pointer-events-none" />
 
                 <div className="max-w-[1440px] mx-auto grid grid-cols-1 lg:grid-cols-12 gap-24 items-center relative z-10">
-                    <div className="lg:col-span-5 space-y-12">
+                    <div className={`${(id === 'astra-valley' || id === 'goutam-valley') ? 'lg:col-span-12' : 'lg:col-span-5'} space-y-12`}>
                         <motion.div
                             initial={{ opacity: 0, x: -30 }}
                             whileInView={{ opacity: 1, x: 0 }}
@@ -787,27 +759,29 @@ export default function ProjectDetail() {
                         </motion.div>
                     </div>
 
-                    <div className="lg:col-span-7">
-                        <AnimatePresence mode="wait">
-                            <motion.div
-                                key={activePoint}
-                                initial={{ opacity: 0, scale: 0.95 }}
-                                animate={{ opacity: 1, scale: 1 }}
-                                exit={{ opacity: 0, scale: 1.02 }}
-                                transition={{ duration: 0.8 }}
-                                className="relative h-[650px] border border-[#C6A75E]/20 p-4 bg-[#161618]"
-                            >
-                                <img src={project.highlights[activePoint].image} className="w-full h-full object-cover contrast-110" alt="Connect" />
-                                <div className="absolute inset-0 bg-gradient-to-t from-[#0B0B0D]/80 via-transparent to-transparent" />
-                                <div className="absolute bottom-12 left-12 right-12">
-                                    <p className="text-xl text-[#F5F5F5] font-serif italic mb-4">"{project.highlights[activePoint].detail}"</p>
-                                    <div className="flex items-center gap-4 text-[9px] tracking-[3px] uppercase text-[#7A7A7A]">
-                                        <ShieldCheck className="w-3 h-3 text-[#C6A75E]" /> Verified Landmark Proximity
+                    {!(id === 'astra-valley' || id === 'goutam-valley') && (
+                        <div className="lg:col-span-7">
+                            <AnimatePresence mode="wait">
+                                <motion.div
+                                    key={activePoint}
+                                    initial={{ opacity: 0, scale: 0.95 }}
+                                    animate={{ opacity: 1, scale: 1 }}
+                                    exit={{ opacity: 0, scale: 1.02 }}
+                                    transition={{ duration: 0.8 }}
+                                    className="relative h-[650px] border border-[#C6A75E]/20 p-4 bg-[#161618]"
+                                >
+                                    <img src={project.highlights[activePoint].image} className="w-full h-full object-cover contrast-110" alt="Connect" />
+                                    <div className="absolute inset-0 bg-gradient-to-t from-[#0B0B0D]/80 via-transparent to-transparent" />
+                                    <div className="absolute bottom-12 left-12 right-12">
+                                        <p className="text-xl text-[#F5F5F5] font-serif italic mb-4">"{project.highlights[activePoint].detail}"</p>
+                                        <div className="flex items-center gap-4 text-[9px] tracking-[3px] uppercase text-[#7A7A7A]">
+                                            <ShieldCheck className="w-3 h-3 text-[#C6A75E]" /> Verified Landmark Proximity
+                                        </div>
                                     </div>
-                                </div>
-                            </motion.div>
-                        </AnimatePresence>
-                    </div>
+                                </motion.div>
+                            </AnimatePresence>
+                        </div>
+                    )}
                 </div>
             </section>
 
@@ -858,7 +832,7 @@ export default function ProjectDetail() {
                     <div className="grid grid-cols-1 lg:grid-cols-2 gap-20 items-start">
                         <div className="space-y-6">
                             <span className="text-[#C6A75E] tracking-[8px] text-[10px] font-bold uppercase block">Information Hub</span>
-                            <h2 className="text-6xl md:text-8xl text-white font-serif italic uppercase">FAQs</h2>
+                            <h2 className="text-6xl md:text-8xl text-white font-serif uppercase">FAQs</h2>
                             <div className="w-20 h-1 bg-[#C6A75E]" />
                         </div>
 

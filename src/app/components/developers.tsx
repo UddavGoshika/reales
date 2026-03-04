@@ -111,6 +111,45 @@ export function Developers() {
             </motion.div>
           ))}
         </div>
+        {/* 3. OUR TEAM SECTION - SLIDE OUT EFFECT */}
+        <motion.div
+          initial={{ opacity: 0 }}
+          whileInView={{ opacity: 1 }}
+          viewport={{ once: true }}
+          className="mt-40 border-t border-[#C6A75E]/10 pt-32"
+        >
+          <div className="text-center mb-20">
+            <h3 className="text-3xl text-[#F5F5F5]" style={{ fontFamily: "'Playfair Display', serif", fontWeight: 600 }}>Our Executive Team</h3>
+            <div className="w-12 h-[1px] bg-[#C6A75E] mx-auto mt-4" />
+          </div>
+
+          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8">
+            {[
+              { name: 'Marcus Aurelius', role: 'Operations', img: 'https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?q=80&w=400' },
+              { name: 'Sarah Jenkins', role: 'Support', img: 'https://images.unsplash.com/photo-1494790108377-be9c29b29330?q=80&w=400' },
+              { name: 'David Chen', role: 'Finance', img: 'https://images.unsplash.com/photo-1500648767791-00dcc994a43e?q=80&w=400' },
+              { name: 'Elena Rodriguez', role: 'Marketing', img: 'https://images.unsplash.com/photo-1534528741775-53994a69daeb?q=80&w=400' }
+            ].map((member, i) => (
+              <motion.div
+                key={i}
+                initial={{ opacity: 0, x: -30 }}
+                whileInView={{ opacity: 1, x: 0 }}
+                viewport={{ once: true }}
+                transition={{ delay: i * 0.1 }}
+                className="group relative overflow-hidden rounded-2xl aspect-[4/5]"
+              >
+                <img src={member.img} alt={member.name} className="w-full h-full object-cover grayscale group-hover:grayscale-0 transition-all duration-700" />
+                <div className="absolute inset-0 bg-gradient-to-t from-black via-black/20 to-transparent opacity-60" />
+
+                {/* SLIDE OUT INFO */}
+                <div className="absolute bottom-0 left-0 right-0 p-6 translate-y-full group-hover:translate-y-0 transition-transform duration-500 bg-black/60 backdrop-blur-md">
+                  <h4 className="text-lg text-white font-bold">{member.name}</h4>
+                  <p className="text-[#C6A75E] text-[10px] tracking-[2px] uppercase">{member.role}</p>
+                </div>
+              </motion.div>
+            ))}
+          </div>
+        </motion.div>
       </div>
     </section>
   );

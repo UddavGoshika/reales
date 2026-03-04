@@ -23,6 +23,9 @@ export default defineConfig({
   assetsInclude: ['**/*.svg', '**/*.csv', '**/*.xlsx', '**/*.pdf'],
 
   server: {
-    allowedHosts: ['bolt-packs-lobby-setup.trycloudflare.com'],
+    allowedHosts: [
+      'bolt-packs-lobby-setup.trycloudflare.com',
+      'memphis-chemistry-procedures-sample.trycloudflare.com'
+    ],
   },
 })
