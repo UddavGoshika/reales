@@ -1,6 +1,6 @@
 import { motion } from 'motion/react';
 import {
-    Diamond, MapPin, ArrowRight, ShieldCheck, Globe,
+    Diamond, MapPin, ShieldCheck, Globe,
     TrendingUp, BarChart3, Gem, PieChart, Landmark,
     Map, Building2, Palmtree, House, LayoutGrid, Compass,
     Users, Briefcase, GraduationCap, HeartPulse, Mail,
@@ -36,6 +36,10 @@ export default function AboutPage() {
                     </p>
                 </motion.div>
             </section>
+
+
+
+
 
             {/* 2. LEADERSHIP SIDE-BY-SIDE GRIDS - FOUNDER TALKS */}
             <section className="py-24 px-8 relative bg-[#0D0D0F]/50 border-y border-white/5">
@@ -129,6 +133,77 @@ export default function AboutPage() {
                 </div>
             </section>
 
+
+
+            {/* AUTO SCROLL DEVELOPERS SLIDER */}
+            <section className="py-20 relative overflow-hidden bg-black/40">
+                <div className="max-w-[1440px] mx-auto px-8 mb-12 flex justify-between items-end">
+                    <div>
+                        <span className="text-[#C6A75E] tracking-[6px] text-[10px] font-black uppercase mb-2 block">
+                            Our Creators
+                        </span>
+                        <h2 className="text-4xl text-white font-serif">
+                            Visionary <span className="text-[#C6A75E] italic">Architects</span>
+                        </h2>
+                    </div>
+                </div>
+
+                {/* SLIDER */}
+                <div className="relative overflow-hidden">
+                    <motion.div
+                        className="flex gap-8 px-8"
+                        animate={{ x: ["0%", "-50%"] }}
+                        transition={{
+                            ease: "linear",
+                            duration: 25,
+                            repeat: Infinity,
+                        }}
+                    >
+                        {[
+                            { name: "Jonathan Sterling", role: "Design Lead", img: "https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?q=80&w=400" },
+                            { name: "Victoria Chen", role: "Chief Architect", img: "https://images.unsplash.com/photo-1573496359142-b8d87734a5a2?q=80&w=400" },
+                            { name: "Marcus Aurelius", role: "Operations", img: "https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?q=80&w=400" },
+                            { name: "Sarah Jenkins", role: "Finishing Specialist", img: "https://images.unsplash.com/photo-1494790108377-be9c29b29330?q=80&w=400" },
+                            { name: "Elena Rodriguez", role: "Interiors", img: "https://images.unsplash.com/photo-1534528741775-53994a69daeb?q=80&w=400" },
+                            { name: "David Chen", role: "Land Acquisition", img: "https://images.unsplash.com/photo-1500648767791-00dcc994a43e?q=80&w=400" },
+                            // duplicated for infinite loop
+                            { name: "Jonathan Sterling", role: "Design Lead", img: "https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?q=80&w=400" },
+                            { name: "Victoria Chen", role: "Chief Architect", img: "https://images.unsplash.com/photo-1573496359142-b8d87734a5a2?q=80&w=400" },
+                            { name: "Marcus Aurelius", role: "Operations", img: "https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?q=80&w=400" },
+                            { name: "Sarah Jenkins", role: "Finishing Specialist", img: "https://images.unsplash.com/photo-1494790108377-be9c29b29330?q=80&w=400" },
+                            { name: "Elena Rodriguez", role: "Interiors", img: "https://images.unsplash.com/photo-1534528741775-53994a69daeb?q=80&w=400" },
+                            { name: "David Chen", role: "Land Acquisition", img: "https://images.unsplash.com/photo-1500648767791-00dcc994a43e?q=80&w=400" }
+                        ].map((member, i) => (
+                            <div
+                                key={i}
+                                className="min-w-[280px] group relative aspect-[3/4] overflow-hidden rounded-3xl border border-white/5 bg-white/[0.02]"
+                            >
+                                <img
+                                    src={member.img}
+                                    alt={member.name}
+                                    className="w-full h-full object-cover grayscale opacity-60 group-hover:grayscale-0 group-hover:opacity-100 group-hover:scale-110 transition-all duration-[1500ms]"
+                                />
+
+                                <div className="absolute inset-0 bg-gradient-to-t from-black via-transparent to-transparent opacity-80" />
+
+                                <div className="absolute bottom-6 left-6 right-6">
+                                    <h4 className="text-white text-lg font-serif">{member.name}</h4>
+                                    <p className="text-[#C6A75E] text-[9px] tracking-[2px] uppercase font-bold">
+                                        {member.role}
+                                    </p>
+                                </div>
+                            </div>
+                        ))}
+                    </motion.div>
+                </div>
+            </section>
+
+
+            <div className="border-t border-white/5">
+                <Projects />
+            </div>
+
+
             {/* 3. FULL WIDTH NAVIGATIONAL GUIDE & PURCHASING FLOW */}
             <section className="py-32 px-8 relative overflow-hidden">
                 <ArchitecturalCurves className="bottom-[-10%] right-[-5%]" opacity={0.03} />
@@ -148,80 +223,80 @@ export default function AboutPage() {
                         {[
                             {
                                 title: "ASTRA VALLEY",
-                                subtitle: "RESORT THEMED LIVING",
+                                // subtitle: "RESORT THEMED LIVING",
                                 location: "Near Vizag-Bheemili, AP",
-                                icon: <Palmtree className="w-12 h-12" />,
+                                // icon: <Palmtree className="w-12 h-12" />,
                                 desc: "Our flagship VMRDA-approved resort-themed layout. Designed for those seeking a retirement sanctuary or a high-growth investment asset.",
                                 howItWorks: "We acquire strategic land, secure VMRDA approvals, and build premium resort infrastructure (Pools, Gyms, 40ft wide roads) before plot allocation.",
                                 howToBuy: "1. Virtual Search & Filter > 2. Physical Site Visit > 3. Token Plot Selection > 4. Instant Legal Title Verification > 5. Registration.",
                                 image: "https://images.unsplash.com/photo-1542601906990-b4d3fb778b09?q=80&w=1400",
-                                price: "Starting from 60L+"
+                                price: "Starting from ***"
                             },
                             {
                                 title: "GOUTAM VALLEY",
-                                subtitle: "ELITE COASTAL CORRIDOR",
+                                // subtitle: "ELITE COASTAL CORRIDOR",
                                 location: "Coastal Road, Bheemili corridor",
-                                icon: <Compass className="w-12 h-12" />,
+                                // icon: <Compass className="w-12 h-12" />,
                                 desc: "Exclusive coastal residential plots in the fast-appreciating Bheemili-Vizag corridor. A project where nature meets sophisticated urban planning.",
                                 howItWorks: "Focused on environmental integration. We preserve natural topography while integrating 100% underground cabling and secure gated perimeters.",
                                 howToBuy: "Visit the Coastal Portal, select your preferred plot orientation (Vaastu Focused), and engage our finance advisors for immediate capital deployment.",
                                 image: "https://images.unsplash.com/photo-1600585154340-be6161a56a0c?q=80&w=1400",
-                                price: "Starting from 80L+"
+                                price: "Starting from ***"
                             },
                             {
                                 title: "FARM LANDS",
-                                subtitle: "SUSTAINABLE ESCAPE",
+                                // subtitle: "SUSTAINABLE ESCAPE",
                                 location: "Agri-Corridor, Vizianagaram",
-                                icon: <Leaf className="w-12 h-12" />,
+                                // icon: <Leaf className="w-12 h-12" />,
                                 desc: "High-yield farm land projects designed for the modern investor desiring both agricultural output and a peaceful green retreat.",
                                 howItWorks: "We identify fertile agrarian zones, develop high-end plantation infrastructure, and manage the ecological balance for sustainable growth.",
                                 howToBuy: "Select your acreage on the Farm portal, choose your crop/plantation preference, and complete digital KYC for immediate land entitlement.",
                                 image: "https://images.unsplash.com/photo-1500382017468-9049fed747ef?q=80&w=1400",
-                                price: "Starting from 45L+"
+                                price: "Starting from ***"
                             },
                             {
                                 title: "PRIVATE VILLAS",
-                                subtitle: "BESPOKE ARCHITECTURE",
+                                // subtitle: "BESPOKE ARCHITECTURE",
                                 location: "Premium Townships, Vizag",
-                                icon: <Gem className="w-12 h-12" />,
+                                // icon: <Gem className="w-12 h-12" />,
                                 desc: "Standalone masterpieces of privacy and bespoke design. These are high-ceiling, multi-tiered residences for ultimate exclusivity.",
                                 howItWorks: "Our architects work with you to customize interiors within the TATITO structural gold standards. We build, you live.",
                                 howToBuy: "Engagement through our 'Invest' portal for early stage reservation. Requires private consultation with our Chief Design Officer.",
                                 image: "https://images.unsplash.com/photo-1613490493576-7fde63acd811?q=80&w=1400",
-                                price: "Starting from 4.5Cr+"
+                                price: "Starting from ***"
                             },
                             {
-                                title: "DUPLEX HOMES",
-                                subtitle: "MODERN SPATIAL LUXURY",
-                                location: "Prime Residential Hubs",
-                                icon: <LayoutGrid className="w-12 h-12" />,
-                                desc: "Efficient architectural elegance. Dual-level living spaces optimized for modern families who desire a combination of social and private zones.",
-                                howItWorks: "We specialize in 'Smart Flow' designs where social areas on the ground floor are separate from master suites on the upper level.",
-                                howToBuy: "Navigate to the 'Duplex' tab, use the 3D-Floorplan analyzer, and book a consultation via our Floating Actions widget.",
-                                image: "https://images.unsplash.com/photo-1512917774080-9991f1c4c750?q=80&w=1400",
-                                price: "Starting from 2.2Cr+"
+                                title: "BESPOKE INTERIORS",
+                                // subtitle: "CURATED LIVING SPACES",
+                                location: "Pan-India Service",
+                                // icon: <Palette className="w-12 h-12" />,
+                                desc: "Transforming empty structures into soulful masterpieces. Our interior design wing specializes in luxury curation, material sovereignty, and bespoke furniture.",
+                                howItWorks: "We begin with empathic discovery, followed by schematic alchemy and meticulous 3D visualization before onsite execution.",
+                                howToBuy: "Schedule a private consultation with our Chief Design Officer through the 'Interiors' portal for a personalized luxury lookbook.",
+                                image: "https://images.unsplash.com/photo-1618221195710-dd6b41faaea6?q=80&w=1400",
+                                price: "Starting from ***"
                             },
                             {
                                 title: "LUXURY APARTMENTS",
-                                subtitle: "VERTICAL TOWNSHIPS",
+                                // subtitle: "VERTICAL TOWNSHIPS",
                                 location: "Urban Core, Vizag & AP",
-                                icon: <Building2 className="w-12 h-12" />,
+                                // icon: <Building2 className="w-12 h-12" />,
                                 desc: "High-rise sophisticated living in the heart of urban hubs. Integrated with smart technology and Otis high-speed security.",
                                 howItWorks: "Vertical integration of life and workspace. We provide 24/7 power backup and RO water systems within a gated vertical perimeter.",
                                 howToBuy: "Select your 'Level' (floor), analyze the panoramic view quadrant, and initiate interest via our 'Analyze Investment' button.",
                                 image: "https://images.unsplash.com/photo-1486406146926-c627a92ad1ab?q=80&w=1400",
-                                price: "Starting from 1.2Cr+"
+                                price: "Starting from ***"
                             },
                             {
                                 title: "OPEN PLOTS & ESTATES",
-                                subtitle: "LAND ACQUISITION",
+                                // subtitle: "LAND ACQUISITION",
                                 location: "Pan-AP Expansion Zones",
-                                icon: <Map className="w-12 h-12" />,
+                                // icon: <Map className="w-12 h-12" />,
                                 desc: "Strategic land nodes across AP/Telangana. Clean titles, clear boundaries, and immediate growth potential.",
                                 howItWorks: "We secure huge land parcels, manage all government approvals (LP Numbers), and develop 40ft roads before hand-over.",
                                 howToBuy: "Direct purchase via our 'Open Plots' gateway. High liquidity assets that can be registered in your choice of name immediately.",
                                 image: "https://images.unsplash.com/photo-1444676632488-26a136c45b9b?q=80&w=1200",
-                                price: "Starting from 35L+"
+                                price: "Starting from ***"
                             }
                         ].map((item, i) => (
                             <motion.div
@@ -273,12 +348,12 @@ export default function AboutPage() {
                                                 >
                                                     <Calendar className="w-3 h-3" /> GET VISIT
                                                 </Link>
-                                                <Link
+                                                {/* <Link
                                                     to="/invest"
                                                     className="px-8 py-3 bg-[#C6A75E] text-black text-[9px] font-black tracking-[3px] uppercase hover:bg-white transition-all transform hover:-translate-y-1 shadow-lg"
                                                 >
                                                     ANALYZE
-                                                </Link>
+                                                </Link> */}
                                             </div>
                                         </div>
                                     </div>
@@ -327,9 +402,7 @@ export default function AboutPage() {
                 </div>
             </section>
 
-            <div className="border-t border-white/5">
-                <Projects />
-            </div>
+
         </div>
     );
 }

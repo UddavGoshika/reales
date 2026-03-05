@@ -1,0 +1,295 @@
+{
+  "pages": [
+    {
+      "_id": "wnh9ahk846i",
+      "createdAt": "2026-03-05T06:19:04.959Z",
+      "title": "Home",
+      "slug": "home",
+      "status": "published"
+    },
+    {
+      "_id": "r3dn5kt6jy",
+      "createdAt": "2026-03-05T06:19:04.960Z",
+      "title": "About Us",
+      "slug": "about",
+      "status": "published"
+    },
+    {
+      "_id": "cq86ajars1q",
+      "createdAt": "2026-03-05T06:19:04.962Z",
+      "title": "Pricing Plan",
+      "slug": "pricing",
+      "status": "published"
+    },
+    {
+      "_id": "v5d4k9b87ob",
+      "createdAt": "2026-03-05T06:51:18.562Z",
+      "title": "APARTMENTS",
+      "slug": "apartments",
+      "status": "published"
+    },
+    {
+      "_id": "4u2p5mowjyx",
+      "createdAt": "2026-03-05T06:51:18.563Z",
+      "title": "VILLAS",
+      "slug": "villas",
+      "status": "published"
+    },
+    {
+      "_id": "gd0dw8o9y7",
+      "createdAt": "2026-03-05T06:51:18.564Z",
+      "title": "INTERIORS",
+      "slug": "interiors",
+      "status": "published"
+    },
+    {
+      "_id": "gyb420iwtsh",
+      "createdAt": "2026-03-05T06:51:18.564Z",
+      "title": "INDIVIDUAL HOUSES",
+      "slug": "individual-houses",
+      "status": "published"
+    },
+    {
+      "_id": "a6ozl9uhs8n",
+      "createdAt": "2026-03-05T06:51:18.564Z",
+      "title": "FARM LANDS",
+      "slug": "farm-lands",
+      "status": "published"
+    },
+    {
+      "_id": "ty6qeq26zfj",
+      "createdAt": "2026-03-05T06:51:18.564Z",
+      "title": "Goutam Valley",
+      "slug": "goutam-valley",
+      "status": "published"
+    }
+  ],
+  "sections": [
+    {
+      "_id": "otpyt777er",
+      "createdAt": "2026-03-05T06:19:04.963Z",
+      "pageId": "wnh9ahk846i",
+      "type": "Hero",
+      "sortOrder": 0,
+      "content": {
+        "title": "Live the Astra Lifestyle",
+        "subtitle": "Goutam Valley offers the ultimate blend of luxury and nature.",
+        "backgroundImage": "https://images.unsplash.com/photo-1512917774080-9991f1c4c750?auto=format&fit=crop&w=1200&q=80"
+      }
+    },
+    {
+      "_id": "7v1ki81zt28",
+      "createdAt": "2026-03-05T06:19:04.965Z",
+      "pageId": "wnh9ahk846i",
+      "type": "Features",
+      "sortOrder": 1,
+      "content": {
+        "heading": "Featured Residences",
+        "description": "Explore our hand-picked selection of premium apartments and villas."
+      }
+    },
+    {
+      "_id": "1a51jj20da3",
+      "createdAt": "2026-03-05T06:28:16.696Z",
+      "type": "Hero",
+      "sortOrder": 0,
+      "content": {
+        "title": "Elite Residences",
+        "subtitle": "The peak of luxury.",
+        "backgroundImage": "https://images.unsplash.com/photo-1512917774080-9991f1c4c750?auto=format&fit=crop&w=1200"
+      },
+      "pageId": "r3dn5kt6jy"
+    },
+    {
+      "_id": "ytpw7c4yv5c",
+      "createdAt": "2026-03-05T06:28:20.766Z",
+      "type": "Features",
+      "sortOrder": 1,
+      "content": {
+        "heading": "Our Landmarks",
+        "description": "Experience the perfection of architecture."
+      },
+      "pageId": "r3dn5kt6jy"
+    },
+    {
+      "_id": "bhg8hmtxrgg",
+      "createdAt": "2026-03-05T06:28:22.083Z",
+      "type": "Gallery",
+      "sortOrder": 2,
+      "content": {
+        "heading": "Interior Excellence",
+        "images": []
+      },
+      "pageId": "r3dn5kt6jy"
+    },
+    {
+      "_id": "3rm2rzaboa7",
+      "createdAt": "2026-03-05T06:28:22.986Z",
+      "type": "FAQ",
+      "sortOrder": 3,
+      "content": {
+        "title": "Frequently Asked",
+        "items": [
+          {
+            "q": "How do I book?",
+            "a": "Contact our sales team."
+          }
+        ]
+      },
+      "pageId": "r3dn5kt6jy"
+    },
+    {
+      "_id": "mv7j39yj9pp",
+      "createdAt": "2026-03-05T06:28:23.818Z",
+      "type": "Testimonials",
+      "sortOrder": 4,
+      "content": {
+        "heading": "What Residents Say",
+        "list": [
+          {
+            "name": "John Doe",
+            "feedback": "Amazing view and service!"
+          }
+        ]
+      },
+      "pageId": "r3dn5kt6jy"
+    },
+    {
+      "_id": "gyao1dfy3ub",
+      "createdAt": "2026-03-05T06:28:24.769Z",
+      "type": "TextContent",
+      "sortOrder": 5,
+      "content": {},
+      "pageId": "r3dn5kt6jy"
+    },
+    {
+      "_id": "gw8bmyh3xku",
+      "createdAt": "2026-03-05T06:51:18.563Z",
+      "pageId": "v5d4k9b87ob",
+      "type": "ProjectExecution",
+      "sortOrder": 10,
+      "content": {
+        "heading": "Project Execution",
+        "description": "Visionary Minds"
+      }
+    },
+    {
+      "_id": "sfqzcu5rjdk",
+      "createdAt": "2026-03-05T06:51:18.563Z",
+      "pageId": "4u2p5mowjyx",
+      "type": "ProjectExecution",
+      "sortOrder": 10,
+      "content": {
+        "heading": "Project Execution",
+        "description": "Visionary Minds"
+      }
+    },
+    {
+      "_id": "sql2klakfuh",
+      "createdAt": "2026-03-05T06:51:18.564Z",
+      "pageId": "gd0dw8o9y7",
+      "type": "ProjectExecution",
+      "sortOrder": 10,
+      "content": {
+        "heading": "Project Execution",
+        "description": "Visionary Minds"
+      }
+    },
+    {
+      "_id": "uwma8eprhc",
+      "createdAt": "2026-03-05T06:51:18.564Z",
+      "pageId": "gyb420iwtsh",
+      "type": "ProjectExecution",
+      "sortOrder": 10,
+      "content": {
+        "heading": "Project Execution",
+        "description": "Visionary Minds"
+      }
+    },
+    {
+      "_id": "ezyev2zt7m",
+      "createdAt": "2026-03-05T06:51:18.564Z",
+      "pageId": "a6ozl9uhs8n",
+      "type": "ProjectExecution",
+      "sortOrder": 10,
+      "content": {
+        "heading": "Project Execution",
+        "description": "Visionary Minds"
+      }
+    },
+    {
+      "_id": "yq3p613wbqd",
+      "createdAt": "2026-03-05T06:51:18.564Z",
+      "pageId": "ty6qeq26zfj",
+      "type": "ProjectExecution",
+      "sortOrder": 10,
+      "content": {
+        "heading": "Project Execution",
+        "description": "Visionary Minds"
+      }
+    }
+  ],
+  "users": [],
+  "settings": [
+    {
+      "_id": "kemilbtlh9",
+      "createdAt": "2026-03-05T06:19:04.943Z",
+      "key": "siteName",
+      "value": "Astra & Goutam Valley"
+    },
+    {
+      "_id": "vvcqngf79b",
+      "createdAt": "2026-03-05T06:19:04.947Z",
+      "key": "primaryColor",
+      "value": "#C6A75E"
+    },
+    {
+      "_id": "pneewy19q8h",
+      "createdAt": "2026-03-05T06:19:04.948Z",
+      "key": "contactEmail",
+      "value": "sales@astragoutam.com"
+    },
+    {
+      "_id": "c31kpsvtve4",
+      "createdAt": "2026-03-05T06:19:04.949Z",
+      "key": "logoUrl",
+      "value": "/logo-gold.png"
+    },
+    {
+      "_id": "rsbzufduz8",
+      "createdAt": "2026-03-05T06:19:04.951Z",
+      "key": "seoTitle",
+      "value": "Luxury Real Estate | Astra Goutam"
+    }
+  ],
+  "media": [
+    {
+      "_id": "evb29ooao85",
+      "createdAt": "2026-03-05T06:19:04.954Z",
+      "fileName": "Hero Background",
+      "fileUrl": "https://images.unsplash.com/photo-1512917774080-9991f1c4c750?auto=format&fit=crop&w=1200&q=80",
+      "fileType": "image/jpeg"
+    },
+    {
+      "_id": "mb7tiwam21",
+      "createdAt": "2026-03-05T06:19:04.956Z",
+      "fileName": "Modern Villa",
+      "fileUrl": "https://images.unsplash.com/photo-1600585154340-be6199f7e009?auto=format&fit=crop&w=800&q=80",
+      "fileType": "image/jpeg"
+    },
+    {
+      "_id": "lhyllwi0kkl",
+      "createdAt": "2026-03-05T06:19:04.957Z",
+      "fileName": "Living Room",
+      "fileUrl": "https://images.unsplash.com/photo-1600566753190-17f0bb2a6c3e?auto=format&fit=crop&w=800&q=80",
+      "fileType": "image/jpeg"
+    },
+    {
+      "_id": "8iygqfo3vhn",
+      "createdAt": "2026-03-05T06:19:04.958Z",
+      "fileName": "Astra Garden",
+      "fileUrl": "https://images.unsplash.com/photo-1541976535035-24bd6582bb75?auto=format&fit=crop&w=800&q=80",
+      "fileType": "image/jpeg"
+    }
+  ]
+}

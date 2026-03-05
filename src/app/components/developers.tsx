@@ -22,7 +22,7 @@ const developers = [
 
 export function Developers() {
   return (
-    <section id="developers" className="py-32 px-8 relative overflow-hidden bg-[#0B0B0D]">
+    <section id="developers" className="py-20 px-8 relative overflow-hidden bg-[#0B0B0D]">
       {/* Architectural Accent Curves */}
       <ArchitecturalCurves className="scale-y-[-1] opacity-60" opacity={0.05} />
       {/* 0. OUTER GOLDEN BORDER ENVELOPE */}
@@ -39,7 +39,7 @@ export function Developers() {
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
           transition={{ duration: 0.8 }}
-          className="text-center mb-28"
+          className="text-center mb-16"
         >
           <span className="text-[#C6A75E] tracking-[6px] text-xs font-bold uppercase mb-4 block">Leadership</span>
           <h2 className="text-4xl md:text-5xl mb-6 text-[#C6A75E]" style={{ fontFamily: "'Playfair Display', serif", fontWeight: 700 }}>
@@ -65,7 +65,7 @@ export function Developers() {
                 <div className="absolute -inset-4 rounded-full bg-[#C6A75E]/5 opacity-0 group-hover:opacity-100 transition-opacity duration-1000 blur-2xl" />
 
                 {/* Main Profile Image */}
-                <div className="relative w-72 h-72 rounded-full overflow-hidden border border-[#C6A75E]/30 p-2 z-10 group-hover:border-[#C6A75E] transition-all duration-700 hover:shadow-[0_0_50px_rgba(198,167,94,0.3)]">
+                <div className="relative w-64 h-64 rounded-full overflow-hidden border border-[#C6A75E]/30 p-2 z-10 group-hover:border-[#C6A75E] transition-all duration-700 hover:shadow-[0_0_50px_rgba(198,167,94,0.3)]">
                   <div className="w-full h-full rounded-full overflow-hidden bg-[#0B0B0D]">
                     <ImageWithFallback
                       src={developer.image}
@@ -76,7 +76,7 @@ export function Developers() {
                 </div>
 
                 {/* Decorative Signature Concept Hover Text */}
-                <div className="absolute -bottom-6 left-1/2 -translate-x-1/2 z-20 pointer-events-none opacity-0 group-hover:opacity-100 transition-opacity duration-1000">
+                <div className="absolute -bottom-10 left-1/2 -translate-x-1/2 z-20 pointer-events-none opacity-0 group-hover:opacity-100 transition-opacity duration-1000">
                   <span className="text-[#C6A75E] text-4xl italic" style={{ fontFamily: "'Playfair Display', serif", fontWeight: 400 }}>{developer.signature}</span>
                 </div>
               </div>
@@ -96,17 +96,6 @@ export function Developers() {
                   Driving architectural revolution through a meticulous commitment to timeless luxury and investment integrity.
                 </p>
 
-                {/* Minimal Social Discovery Row */}
-                <div className="flex justify-center gap-10 pt-8 mt-8 border-t border-white/5 w-full">
-                  {[Linkedin, Twitter, Instagram].map((Icon, i) => (
-                    <button
-                      key={i}
-                      className="w-10 h-10 rounded-full border border-white/10 flex items-center justify-center text-[#7A7A7A] hover:text-[#C6A75E] hover:border-[#C6A75E] hover:shadow-[0_0_20px_rgba(198,167,94,0.35)] transition-all duration-500"
-                    >
-                      <Icon className="w-4 h-4" />
-                    </button>
-                  ))}
-                </div>
               </div>
             </motion.div>
           ))}
@@ -116,10 +105,10 @@ export function Developers() {
           initial={{ opacity: 0 }}
           whileInView={{ opacity: 1 }}
           viewport={{ once: true }}
-          className="mt-40 border-t border-[#C6A75E]/10 pt-32"
+          className="mt-20 border-t border-[#C6A75E]/10 pt-16"
         >
-          <div className="text-center mb-20">
-            <h3 className="text-3xl text-[#F5F5F5]" style={{ fontFamily: "'Playfair Display', serif", fontWeight: 600 }}>Our Executive Team</h3>
+          <div className="text-center mb-16">
+            <h3 className="text-3xl text-[#F5F5F5] uppercase tracking-[6px]" style={{ fontFamily: "'Playfair Display', serif", fontWeight: 600 }}>Meet Our Expert Team</h3>
             <div className="w-12 h-[1px] bg-[#C6A75E] mx-auto mt-4" />
           </div>
 

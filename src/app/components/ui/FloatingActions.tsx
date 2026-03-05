@@ -52,11 +52,11 @@ export function FloatingActions() {
                 <motion.button
                     initial={{ opacity: 0, y: 20 }}
                     animate={{ opacity: 1, y: 0 }}
-                    className="group relative px-6 py-4 md:px-10 md:py-5 bg-[#C6A75E] text-black rounded-full flex items-center gap-3 md:gap-4 shadow-[0_20px_60px_rgba(198,167,94,0.3)] overflow-hidden transition-all duration-700 hover:scale-105"
+                // className="group relative px-6 py-4 md:px-10 md:py-5 bg-[#C6A75E] text-black rounded-full flex items-center gap-3 md:gap-4 shadow-[0_20px_60px_rgba(198,167,94,0.3)] overflow-hidden transition-all duration-700 hover:scale-105"
                 >
-                    <div className="absolute inset-0 bg-white/20 -translate-x-full group-hover:translate-x-0 transition-transform duration-700" />
-                    <FileText className="w-4 h-4 md:w-5 md:h-5 relative z-10" />
-                    <span className="text-[10px] md:text-[11px] tracking-[3px] md:tracking-[4px] font-black uppercase relative z-10">Book Site Visit</span>
+                    {/* <div className="absolute inset-0 bg-white/20 -translate-x-full group-hover:translate-x-0 transition-transform duration-700" /> */}
+                    {/* <FileText className="w-4 h-4 md:w-5 md:h-5 relative z-10" /> */}
+                    {/* <span className="text-[10px] md:text-[11px] tracking-[3px] md:tracking-[4px] font-black uppercase relative z-10">Book Site Visit</span> */}
                 </motion.button>
             </div>
 

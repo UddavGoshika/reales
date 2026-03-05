@@ -1,30 +1,10 @@
 import { motion } from 'motion/react';
 import { ImageWithFallback } from './figma/ImageWithFallback';
-import { Shield, Award, Diamond, Clock, Building2, Globe, HeartPulse, Construction } from 'lucide-react';
+import { Shield, Award, Diamond, Clock, Building2, Globe, HeartPulse, Construction, Users, Target, Eye, Sparkles } from 'lucide-react';
 import { ArchitecturalCurves } from './ui/ArchitecturalCurves';
 
-const valuePoints = [
-  {
-    icon: <Shield className="w-6 h-6" />,
-    title: 'Precision & Trust',
-    description: 'A legacy of architectural integrity and transparent investment structures developed over decades.'
-  },
-  {
-    icon: <Award className="w-6 h-6" />,
-    title: 'Awarded Excellence',
-    description: 'Recognized globally for setting the gold standard in high-end residential and commercial estates.'
-  },
-  {
-    icon: <Diamond className="w-6 h-6" />,
-    title: 'Bespoke Curation',
-    description: 'Each property is a singular masterpiece, hand-curated to match the lifestyle of the elite few.'
-  },
-  {
-    icon: <Clock className="w-6 h-6" />,
-    title: 'Timeless Returns',
-    description: 'We develop assets that don\'t just house a life, but build generational wealth and status.'
-  }
-];
+// @ts-ignore
+import navlogo from './figma/images/navlogo.png';
 
 export function About() {
   return (
@@ -39,77 +19,106 @@ export function About() {
       {/* 1.5. Architectural Accent Curves */}
       <ArchitecturalCurves opacity={0.08} />
 
-      {/* 2. MAIN ABOUT CONTENT (120px PADDING) */}
+      {/* 2. MAIN ABOUT CONTENT (Enlarged and Re-structured) */}
       <div className="max-w-[1440px] mx-auto px-8 md:px-24 py-32 grid grid-cols-1 lg:grid-cols-2 gap-24 items-center relative z-10">
 
-        {/* Cinematic Visual Representation */}
+        {/* Visual Identity Section */}
         <motion.div
           initial={{ opacity: 0, scale: 0.95 }}
           whileInView={{ opacity: 1, scale: 1 }}
           viewport={{ once: true }}
           transition={{ duration: 1 }}
-          className="relative order-2 lg:order-1"
+          className="relative flex flex-col items-center justify-center p-12 border border-[#C6A75E]/20 bg-[#161618]/40 backdrop-blur-3xl rounded-[4rem] shadow-[0_40px_100px_rgba(0,0,0,0.8)]"
         >
-          {/* Main Image with Luxury Border Offset */}
-          <div className="relative z-10 border border-[#C6A75E]/30 p-4 bg-[#161618] backdrop-blur-sm shadow-2xl rounded-[2rem]">
-            <ImageWithFallback
-              src="https://images.unsplash.com/photo-1512918728675-ed5a9ecdebfd?q=80&w=2070"
-              alt="Luxury Architecture"
-              className="w-full h-[650px] object-cover transition-transform duration-1000"
+          {/* Main Logo Presence */}
+          <div className="relative group p-10">
+            <div className="absolute inset-0 bg-[#C6A75E]/5 blur-3xl rounded-full opacity-60 group-hover:opacity-100 transition-opacity duration-1000" />
+            <img
+              src={navlogo}
+              alt="Tatito Logo"
+              className="h-64 md:h-[450px] w-auto object-contain brightness-125 contrast-110 drop-shadow-[0_0_40px_rgba(198,167,94,0.4)] transition-transform duration-1000 hover:scale-105"
             />
-            {/* Architectural Floating Frame Details */}
-            <div className="absolute -top-6 -left-6 w-24 h-24 border-t-2 border-l-2 border-[#C6A75E] z-20 pointer-events-none" />
-            <div className="absolute -bottom-6 -right-6 w-24 h-24 border-b-2 border-r-2 border-[#C6A75E] z-20 pointer-events-none" />
           </div>
 
-          {/* Floating Luxury Counter Card */}
-          <div className="absolute -right-8 bottom-12 z-20 bg-[#1C1C1E] border border-[#C6A75E]/40 p-10 shadow-3xl max-w-[280px] rounded-[2rem]">
-            <span className="text-5xl text-[#C6A75E] block mb-2" style={{ fontFamily: "'Playfair Display', serif", fontWeight: 700 }}>8</span>
-            <span className="text-[10px] tracking-[4px] uppercase text-[#F5F5F5] font-bold">Years of Architectural Supremacy</span>
+          {/* Luxury Floating Frame Details */}
+          <div className="absolute top-12 left-12 w-24 h-24 border-t-2 border-l-2 border-[#C6A75E]/40 z-20 pointer-events-none rounded-tl-[3rem]" />
+          <div className="absolute bottom-12 right-12 w-24 h-24 border-b-2 border-r-2 border-[#C6A75E]/40 z-20 pointer-events-none rounded-br-[3rem]" />
+
+          {/* Experience Badge */}
+          <div className="mt-8 bg-[#0B0B0D] border border-[#C6A75E]/30 px-12 py-6 rounded-full shadow-2xl">
+            <div className="flex items-center gap-6">
+              <span className="text-5xl text-[#C6A75E] font-serif font-black">8+</span>
+              <div className="h-10 w-[1px] bg-[#C6A75E]/20" />
+              <span className="text-[10px] tracking-[4px] uppercase text-[#F5F5F5] font-black max-w-[100px] leading-tight">Years of Market Leadership</span>
+            </div>
           </div>
         </motion.div>
 
-        {/* Narrative Text Section */}
-        <div className="order-1 lg:order-2">
+        {/* Expanded Narrative Section */}
+        <div className="space-y-16">
           <motion.div
             initial={{ opacity: 0, x: 30 }}
             whileInView={{ opacity: 1, x: 0 }}
             viewport={{ once: true }}
             transition={{ duration: 0.8 }}
-            className="mb-12"
           >
-            <span className="text-[#C6A75E] tracking-[6px] text-xs font-bold uppercase mb-4 block">The Organization</span>
-            <h2 className="text-4xl md:text-6xl mb-10 text-[#F5F5F5]" style={{ fontFamily: "'Playfair Display', serif", fontWeight: 500, lineHeight: 1.1 }}>
-              Defining High-End <br /> <span className="text-[#C6A75E] italic">Living Standards</span>
+            <span className="text-[#C6A75E] tracking-[10px] text-sm font-black uppercase mb-6 block border-l-2 border-[#C6A75E] pl-6 uppercase">About Us</span>
+            <h2 className="text-5xl md:text-7xl mb-12 text-[#F5F5F5] font-serif leading-[1.1]">
+              Redefining <span className="text-[#C6A75E] italic">Luxury Living</span>
             </h2>
-            <div className="w-24 h-[2px] bg-[#C6A75E] mb-12" />
+
+            <div className="space-y-12">
+              <p className="text-[#F5F5F5] text-2xl leading-relaxed font-light tracking-wide lg:max-w-xl" style={{ fontFamily: "'Playfair Display', serif" }}>
+                At TATITO, we go beyond mere structures. We curate diverse lifestyle streams including premium <strong>Open Plots</strong>, sustainable <strong>Farm Lands</strong>, royal <strong>Villas</strong>, and bespoke <strong>Interiors</strong>.
+              </p>
+
+              {/* Detailed Quadrants */}
+              <div className="grid grid-cols-1 md:grid-cols-2 gap-10">
+                <div className="space-y-4 group">
+                  <div className="flex items-center gap-4 text-[#C6A75E]">
+                    <Sparkles className="w-5 h-5" />
+                    <span className="text-[10px] tracking-[4px] font-black uppercase">Our Vision</span>
+                  </div>
+                  <p className="text-[#7A7A7A] text-sm leading-relaxed group-hover:text-[#B5B5B5] transition-colors font-medium">To be the global benchmark in high-end living, harmonizing nature's farm lands with ultra-modern Royal Villas.</p>
+                </div>
+
+                <div className="space-y-4 group">
+                  <div className="flex items-center gap-4 text-[#C6A75E]">
+                    <Target className="w-5 h-5" />
+                    <span className="text-[10px] tracking-[4px] font-black uppercase">Our Goal</span>
+                  </div>
+                  <p className="text-[#7A7A7A] text-sm leading-relaxed group-hover:text-[#B5B5B5] transition-colors font-medium">Delivering clear-title Open Plots and high-yield Real Estate investments through an uncompromising ethical framework.</p>
+                </div>
+
+                <div className="space-y-4 group">
+                  <div className="flex items-center gap-4 text-[#C6A75E]">
+                    <Users className="w-5 h-5" />
+                    <span className="text-[10px] tracking-[4px] font-black uppercase">Happy Families</span>
+                  </div>
+                  <p className="text-[#7A7A7A] text-sm leading-relaxed group-hover:text-[#B5B5B5] transition-colors font-medium">Over 500+ families have realized their dream through our bespoke Interiors and sophisticated Apartment projects.</p>
+                </div>
+
+                <div className="space-y-4 group">
+                  <div className="flex items-center gap-4 text-[#C6A75E]">
+                    <Globe className="w-5 h-5" />
+                    <span className="text-[10px] tracking-[4px] font-black uppercase">Full Spectrum</span>
+                  </div>
+                  <p className="text-[#7A7A7A] text-sm leading-relaxed group-hover:text-[#B5B5B5] transition-colors font-medium">We master the entire lifecycle of real estate, from strategic land acquisition to the final interior aesthetic.</p>
+                </div>
+              </div>
+            </div>
           </motion.div>
 
           <motion.div
             initial={{ opacity: 0 }}
             whileInView={{ opacity: 1 }}
             viewport={{ once: true }}
-            transition={{ duration: 0.8, delay: 0.3 }}
-            className="space-y-8"
-          >
-            <p className="text-[#B5B5B5] text-lg leading-relaxed font-light tracking-wide" style={{ fontFamily: "'DM Sans', sans-serif" }}>
-              Founded on the principles of architectural perfection and structural integrity, TATITO has spent over eight years curating the most exclusive residences in the world.
-            </p>
-            <p className="text-[#B5B5B5] text-lg leading-relaxed font-light tracking-wide" style={{ fontFamily: "'DM Sans', sans-serif" }}>
-              We don't just build homes; we craft generational assets. Our properties are investments in a lifestyle of absolute privacy, sophisticated comfort, and timeless elegance for modern living.
-            </p>
-          </motion.div>
-
-          <motion.button
-            initial={{ opacity: 0 }}
-            whileInView={{ opacity: 1 }}
-            viewport={{ once: true }}
             transition={{ duration: 0.8, delay: 0.5 }}
-            className="mt-16 group flex items-center gap-6"
+            className="pt-10 flex flex-col gap-6"
           >
-            <span className="text-[#F5F5F5] text-[10px] tracking-[6px] uppercase font-bold group-hover:text-[#C6A75E] transition-colors duration-500">Read the Full Legacy</span>
-            <div className="h-[1px] w-24 bg-[#C6A75E] transition-all duration-700 group-hover:w-32 shadow-[0_0_10px_rgba(198,167,94,0.5)]" />
-          </motion.button>
+            <div className="w-48 h-[2px] bg-[#C6A75E]" />
+            <span className="text-[#F5F5F5] text-[10px] tracking-[8px] uppercase font-black opacity-30 tracking-widest">THE TATITO LEGACY</span>
+          </motion.div>
         </div>
       </div>
 

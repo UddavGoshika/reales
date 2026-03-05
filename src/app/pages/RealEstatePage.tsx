@@ -2,11 +2,12 @@ import React from 'react';
 import { motion } from 'motion/react';
 import {
     Home, Building2, Trees,
-    ArrowRight, MapPin, Ruler,
+    ArrowRight as ArrowIcon, MapPin, Ruler,
     Search, LayoutGrid, List
 } from 'lucide-react';
 import { Link } from 'react-router-dom';
 import { Projects } from '../components/projects';
+import { ProjectTeam } from '../components/ProjectTeam';
 
 const properties = [
     { title: 'Apartments', type: 'apartments', image: 'https://images.unsplash.com/photo-1613490493576-7fde63acd811?q=80&w=1080' },
@@ -56,14 +57,14 @@ export default function RealEstatePage() {
                         {properties.map((prop, i) => (
                             <Link
                                 key={i}
-                                to={`/category/${prop.type}`}
+                                to={`/ category / ${prop.type} `}
                                 className="group relative h-80 overflow-hidden border border-[#C6A75E]/20 transition-all duration-700 hover:border-[#C6A75E]"
                             >
                                 <img src={prop.image} className="w-full h-full object-cover group-hover:scale-110 transition-all duration-[2000ms]" alt={prop.title} />
                                 <div className="absolute inset-x-0 bottom-0 p-8 bg-gradient-to-t from-black via-black/40 to-transparent">
                                     <h3 className="text-3xl text-white font-serif mb-2 group-hover:text-[#C6A75E] transition-colors">{prop.title}</h3>
                                     <div className="flex items-center gap-4 text-[#7A7A7A] text-[9px] tracking-[4px] uppercase font-bold group-hover:text-white transition-colors">
-                                        Browse Collection <ArrowRight className="w-3 h-3 group-hover:translate-x-2 transition-transform" />
+                                        Browse Collection <ArrowIcon className="w-3 h-3 group-hover:translate-x-2 transition-transform" />
                                     </div>
                                 </div>
                             </Link>
@@ -71,6 +72,7 @@ export default function RealEstatePage() {
                     </div>
                 </div>
             </section>
+            <ProjectTeam />
         </div>
     );
 }

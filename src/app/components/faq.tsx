@@ -50,11 +50,12 @@ export function FAQ() {
             </h2>
             <div className="w-24 h-[1px] bg-[#C6A75E] mb-12" />
             <p className="text-[#B5B5B5] text-lg leading-relaxed font-light mb-16 tracking-wide" style={{ fontFamily: "'DM Sans', sans-serif" }}>
-              Detailed insights into our investment structures, architectural protocols, and the TATITO standard of excellence.
-            </p>
+
+              Discover Most FAQ About premium open plots, apartments, villas, interiors, and farm lands in prime locations.
+              We help you find the perfect property for living, investment, and future growth.            </p>
 
             <button className="flex items-center gap-6 group text-[#C6A75E] text-[10px] tracking-[6px] uppercase font-bold">
-              <span>Download Full Investor Kit</span>
+              {/* <span>Download Full Investor Kit</span> */}
               <div className="w-12 h-[1px] bg-[#C6A75E] transition-all duration-700 group-hover:w-20" />
             </button>
           </motion.div>

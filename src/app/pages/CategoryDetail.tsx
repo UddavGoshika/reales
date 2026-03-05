@@ -3,11 +3,13 @@ import { useParams, Link } from 'react-router-dom';
 import { motion, AnimatePresence } from 'motion/react';
 import {
     FileText, MapPin, Layout, ListChecks, Ruler,
-    Hammer, BookOpen, ChevronRight, ArrowRight, ChevronDown,
+    Hammer, BookOpen, ChevronRight, ArrowRight as ArrowIcon, ChevronDown,
     Diamond, Globe, ShieldCheck, Play
 } from 'lucide-react';
 import { ImageWithFallback } from '../components/figma/ImageWithFallback';
 import { Projects } from '../components/projects';
+import { ProjectTeam } from '../components/ProjectTeam';
+import { ProjectTabs } from '../components/ProjectTabs';
 // @ts-ignore
 import layoutPlanPdf from '../components/figma/images/LAYOUT PLAN.pdf';
 // @ts-ignore
@@ -250,8 +252,6 @@ const tabs = [
 export default function CategoryDetail() {
     const { type } = useParams<{ type: string }>();
     const data = categoryData[type || 'apartments'];
-    const [activeTab, setActiveTab] = useState('amenities');
-    const [mediaFilter, setMediaFilter] = useState('All');
     const [activePoint, setActivePoint] = useState(0);
     const [activeHighlight, setActiveHighlight] = useState(0);
     const [openFaq, setOpenFaq] = useState<number | null>(null);
@@ -262,7 +262,7 @@ export default function CategoryDetail() {
             list: data.amenities,
             images: data.gallery.slice(0, 2)
         },
-        floorplan: {
+        floorplans: {
             title: "Floor Plans & Plot Sizes",
             xlsx: plotSizesExcel,
             list: ["Individual plot measurements", "Phase I breakdown", "Road side dimensions", "Ready for registration plots"]
@@ -285,6 +285,10 @@ export default function CategoryDetail() {
             title: "Construction Life",
             list: ["Foundation work underway", "Site clearing completed", "Utility lines installation", "Road network planning"],
             images: data.gallery.slice(0, 3).map((img: any) => ({ ...img, type: 'Images' }))
+        },
+        location: {
+            title: "Strategic Connectivity",
+            connectivity: data.connectivity
         }
     };
 
@@ -524,214 +528,29 @@ export default function CategoryDetail() {
                                             <p className="text-[#B5B5B5] text-sm italic font-body lowercase tracking-wide">{point.detail}</p>
                                         )}
                                     </div>
-                                    <ChevronRight className={`w-4 h-4 transition-all duration-700 ${activePoint === idx ? 'text-[#C6A75E]' : 'text-[#7A7A7A] opacity-0 translate-x-4'}`} />
                                 </button>
                             ))}
                         </div>
                     </div>
                 </div>
             </section>
-
-            {/* 4. ELITE TAB EXPERIENCE */}
-            <section className="py-32 px-8 max-w-[1440px] mx-auto">
-                <div className="flex flex-wrap bg-[#161618] border border-[#C6A75E]/20 mb-20">
-                    {tabs.map((tab) => (
-                        <button
-                            key={tab.id}
-                            onClick={() => setActiveTab(tab.id)}
-                            className={`flex-1 min-w-[160px] py-8 flex items-center justify-center gap-4 transition-all duration-700 border-r border-[#C6A75E]/10 last:border-r-0 ${activeTab === tab.id ? 'bg-[#C6A75E]/10 text-[#C6A75E]' : 'text-[#7A7A7A] hover:bg-white/5 hover:text-[#B5B5B5]'}`}
-                        >
-                            <span className="text-[10px] tracking-[3px] uppercase font-bold">{tab.label}</span>
-                        </button>
-                    ))}
-                </div>
-
-                <div className="min-h-[600px] bg-[#161618] border border-white/5 p-12 lg:p-20 rounded-3xl">
-                    <AnimatePresence mode="wait">
-                        <motion.div
-                            key={activeTab}
-                            initial={{ opacity: 0, y: 20 }}
-                            animate={{ opacity: 1, y: 0 }}
-                            exit={{ opacity: 0, y: -20 }}
-                            transition={{ duration: 0.6 }}
-                            className={`${technicalDetails[activeTab]?.pdf ? 'block' : 'grid grid-cols-1 lg:grid-cols-2 gap-20 items-start'}`}
-                        >
-                            {technicalDetails[activeTab]?.pdf ? (
-                                <div className="w-full space-y-8">
-                                    <div className="flex items-center justify-between">
-                                        <div className="flex items-center gap-4">
-                                            <div className="w-12 h-[1px] bg-[#C6A75E]" />
-                                            <span className="text-[#C6A75E] tracking-[6px] text-[10px] font-bold uppercase">Official Layout Blueprint</span>
-                                        </div>
-                                        <a
-                                            href={technicalDetails[activeTab]?.pdf}
-                                            target="_blank"
-                                            rel="noopener noreferrer"
-                                            className="px-8 py-3 border border-[#C6A75E]/30 text-[#C6A75E] text-[9px] tracking-[3px] uppercase font-bold hover:bg-[#C6A75E] hover:text-black transition-all"
-                                        >
-                                            View Original
-                                        </a>
-                                    </div>
-                                    <div className="w-full h-[1000px] rounded-2xl overflow-hidden border border-white/10 shadow-3xl bg-black">
-                                        <iframe
-                                            src={`${technicalDetails[activeTab]?.pdf}#toolbar=0&navpanes=0`}
-                                            className="w-full h-full"
-                                            title="Layout Plan"
-                                        />
-                                    </div>
-                                </div>
-                            ) : technicalDetails[activeTab]?.xlsx ? (
-                                <div className="w-full space-y-12 py-12">
-                                    <div className="flex flex-col items-center text-center space-y-8">
-                                        <div className="w-24 h-24 rounded-2xl bg-[#C6A75E]/10 flex items-center justify-center text-[#C6A75E] border border-[#C6A75E]/20">
-                                            <FileText className="w-10 h-10" />
-                                        </div>
-                                        <div className="space-y-4">
-                                            <h3 className="text-3xl font-serif italic text-white">{technicalDetails[activeTab]?.title}</h3>
-                                            <p className="text-[#B5B5B5] max-w-xl mx-auto font-light leading-relaxed">
-                                                The detailed plot sizes and measurements are available in the official project spreadsheet.
-                                                Download the file below to view the comprehensive Phase 1 layout details.
-                                            </p>
-                                        </div>
-                                        <div className="flex flex-wrap justify-center gap-12 pt-8">
-                                            {(technicalDetails[activeTab]?.list || []).map((item: string, idx: number) => (
-                                                <div key={idx} className="flex items-center gap-3">
-                                                    <div className="w-1.5 h-1.5 rounded-full bg-[#C6A75E]" />
-                                                    <span className="text-[10px] tracking-[2px] uppercase text-[#7A7A7A] font-bold">{item}</span>
-                                                </div>
-                                            ))}
-                                        </div>
-                                        <a
-                                            href={technicalDetails[activeTab]?.xlsx}
-                                            download
-                                            className="mt-12 group flex items-center gap-6 bg-[#C6A75E] text-black px-12 py-6 text-[10px] tracking-[4px] uppercase font-black shadow-2xl hover:bg-[#E8D8A0] transition-all duration-500"
-                                        >
-                                            Download Plot Sizes Sheet <ArrowRight className="w-4 h-4 transition-transform group-hover:translate-x-2" />
-                                        </a>
-                                    </div>
-                                </div>
-                            ) : (
-                                <>
-                                    {/* Left: Gallery/Visuals */}
-                                    <div className="grid grid-cols-1 gap-10 relative lg:order-1">
-                                        <div className="absolute -inset-8 border border-[#C6A75E]/10 rounded-[3rem] -z-1 transition-all duration-1000 group-hover:border-[#C6A75E]/20" />
-
-                                        {activeTab === 'wip' && (
-                                            <div className="flex flex-wrap gap-4 mb-4">
-                                                {['All', 'Images', 'Videos'].map((filter) => (
-                                                    <button
-                                                        key={filter}
-                                                        onClick={() => setMediaFilter(filter)}
-                                                        className={`px-6 py-2.5 rounded-full text-[9px] tracking-[3px] uppercase font-black transition-all duration-500 border ${mediaFilter === filter
-                                                            ? 'bg-[#C6A75E] text-black border-[#C6A75E]'
-                                                            : 'border-white/10 text-[#7A7A7A] hover:border-[#C6A75E]/50 hover:text-[#C6A75E]'
-                                                            }`}
-                                                    >
-                                                        {filter}
-                                                    </button>
-                                                ))}
-                                            </div>
-                                        )}
-
-                                        {(technicalDetails[activeTab]?.images || [
-                                            { src: "https://images.unsplash.com/photo-1503387762-592dea58ef01?q=80&w=800", caption: "Architectural Vision", type: 'Images' },
-                                            { src: "https://images.unsplash.com/photo-1541944743827-e04bb645d993?q=80&w=1080", caption: "Construction Update Video", type: 'Videos' }
-                                        ]).filter((m: any) => mediaFilter === 'All' || m.type === mediaFilter || !m.type).map((img: any, idx: number) => (
-                                            <motion.div
-                                                key={idx}
-                                                whileHover={{ scale: 1.02 }}
-                                                className="relative aspect-video overflow-hidden border border-white/10 group rounded-xl shadow-2xl bg-black"
-                                            >
-                                                {img.type === 'Videos' ? (
-                                                    <video
-                                                        src={img.src}
-                                                        className="w-full h-full object-cover transition-all duration-1000 grayscale group-hover:grayscale-0"
-                                                        muted
-                                                        loop
-                                                        playsInline
-                                                        onMouseEnter={(e) => e.currentTarget.play()}
-                                                        onMouseLeave={(e) => {
-                                                            e.currentTarget.pause();
-                                                            e.currentTarget.currentTime = 0;
-                                                        }}
-                                                    />
-                                                ) : (
-                                                    <img src={img.src} className="w-full h-full object-cover transition-all duration-1000 grayscale group-hover:grayscale-0" alt="Tech" />
-                                                )}
-                                                <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-transparent to-transparent opacity-60" />
-
-                                                {img.type === 'Videos' && (
-                                                    <div className="absolute inset-0 flex items-center justify-center">
-                                                        <div className="w-16 h-16 rounded-full bg-[#C6A75E]/20 backdrop-blur-md border border-[#C6A75E]/40 flex items-center justify-center text-[#C6A75E] transition-all group-hover:scale-110 group-hover:bg-[#C6A75E] group-hover:text-black">
-                                                            <Play className="w-6 h-6 fill-current translate-x-0.5" />
-                                                        </div>
-                                                    </div>
-                                                )}
-
-                                                <div className="absolute bottom-6 left-6">
-                                                    <span className="text-[#C6A75E] text-[8px] tracking-[4px] uppercase font-bold border-l-2 border-[#C6A75E] pl-3">
-                                                        {img.caption}
-                                                    </span>
-                                                </div>
-                                            </motion.div>
-                                        ))}
-                                    </div>
-
-                                    {/* Right: Detailed List */}
-                                    <div className="space-y-12 lg:order-2">
-                                        <div className="space-y-4">
-                                            <div className="flex items-center gap-4">
-                                                <div className="w-12 h-[1px] bg-[#C6A75E]" />
-                                                <span className="text-[#C6A75E] tracking-[6px] text-[10px] font-bold uppercase">Discover details</span>
-                                            </div>
-                                            <h3 className="text-4xl text-[#F5F5F5] font-serif italic">
-                                                {technicalDetails[activeTab]?.title || "Project Feature"}
-                                            </h3>
-                                        </div>
-
-                                        <ul className="grid grid-cols-1 gap-y-8">
-                                            {(technicalDetails[activeTab]?.list || [
-                                                "Premium international standards",
-                                                "Architectural excellence in every detail",
-                                                "Sustainable development practices",
-                                                "State-of-the-art infrastructure"
-                                            ]).map((item: string, idx: number) => (
-                                                <li key={idx} className="flex items-start gap-6 group">
-                                                    <div className="w-10 h-10 rounded-full border border-[#C6A75E]/30 flex items-center justify-center shrink-0 group-hover:bg-[#C6A75E] group-hover:border-[#C6A75E] transition-all duration-500">
-                                                        <ChevronRight className="w-4 h-4 text-[#C6A75E] group-hover:text-white transition-colors" />
-                                                    </div>
-                                                    <div className="space-y-1 pt-1">
-                                                        <span className="text-[#D1D1D1] text-lg font-light tracking-wide leading-relaxed group-hover:text-white transition-colors">
-                                                            {item}
-                                                        </span>
-                                                        <div className="w-0 h-[1px] bg-[#C6A75E]/30 group-hover:w-full transition-all duration-700" />
-                                                    </div>
-                                                </li>
-                                            ))}
-                                        </ul>
-
-                                        <div className="pt-12 flex flex-wrap gap-8">
-                                            {activeTab === 'ebroucher' ? (
-                                                <button className="group flex items-center gap-6 bg-[#C6A75E] text-black px-12 py-6 text-[10px] tracking-[4px] uppercase font-black hover:bg-[#E8D8A0] transition-all duration-500 shadow-2xl">
-                                                    GET THE BROCHURE <FileText className="w-5 h-5 transition-transform group-hover:-translate-y-1" />
-                                                </button>
-                                            ) : (
-                                                <button className="group flex items-center gap-6 text-[#C6A75E] text-[10px] tracking-[5px] uppercase font-black border-b border-[#C6A75E]/0 hover:border-[#C6A75E]/40 pb-3 transition-all duration-500">
-                                                    REQUEST DOCUMENTS <ArrowRight className="w-5 h-5 transition-transform group-hover:translate-x-3" />
-                                                </button>
-                                            )}
-                                        </div>
-                                    </div>
-                                </>
-                            )}
-                        </motion.div>
-                    </AnimatePresence>
-                </div>
-            </section>
+            {/* 4. UNIFIED PROJECT TABS SYSTEM */}
+            <ProjectTabs
+                project={{
+                    name: data.title,
+                    location: data.location,
+                    heroImage: data.heroImage,
+                    amenities: data.amenities?.map((a: string) => ({ name: a, image: data.gallery[0]?.src })),
+                    technicalDetails: technicalDetails
+                }}
+            />
 
 
 
 
+
+            {/* 6.5 PROJECT TEAM AUTOSCROLL */}
+            < ProjectTeam />
 
             {/* 7. READY TO EXPERIENCE CTA */}
             < section className="relative py-40 overflow-hidden group" >

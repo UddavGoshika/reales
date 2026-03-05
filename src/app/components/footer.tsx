@@ -26,20 +26,20 @@ export function Footer() {
           {/* Logo Brand Segment */}
           <div className="lg:col-span-4 space-y-8">
             <div className="space-y-4">
-              <h2 className="text-4xl text-[#C6A75E] tracking-[6px]" style={{ fontFamily: "'Playfair Display', serif", fontWeight: 700 }}>
+              {/* <h2 className="text-4xl text-[#C6A75E] tracking-[6px]" style={{ fontFamily: "'Playfair Display', serif", fontWeight: 700 }}>
                 TATITO
-              </h2>
+              </h2> */}
               <Link to="/" className="block">
                 <img
                   src={navlogo}
                   alt="Tatito Logo"
-                  className="h-20 w-auto brightness-110 contrast-125 object-contain hover:scale-105 transition-transform duration-500 drop-shadow-[0_0_15px_rgba(198,167,94,0.2)]"
+                  className="h-40 w-auto pl-14 brightness-110 contrast-125 object-contain hover:scale-105 transition-transform duration-500 drop-shadow-[0_0_15px_rgba(198,167,94,0.2)]"
                 />
               </Link>
             </div>
             <p className="max-w-xs text-[#7A7A7A] text-sm leading-relaxed font-light tracking-widest uppercase">
-              The Gold Standard of Architecture and Investment Integrity. Globally Recognized for Excellence Since 1995.
-            </p>
+              Discover premium open plots, apartments, villas, interiors, and farm lands in prime locations.
+              We help you find the perfect property for living, investment, and future growth.            </p>
 
             {/* Social Icons Discovery Row */}
             <div className="flex flex-wrap gap-5">
@@ -68,13 +68,16 @@ export function Footer() {
 
           {/* Tattio Nodes Nav Group */}
           <div className="lg:col-span-2 space-y-8">
-            <h4 className="text-[10px] tracking-[4px] uppercase text-[#C6A75E] font-bold">Tattio Nodes</h4>
+            <h4 className="text-[10px] tracking-[4px] uppercase text-[#C6A75E] font-bold">Tattio EcoSystem</h4>
             <ul className="space-y-4 text-xs font-light tracking-widest text-[#B5B5B5]">
               <li className="hover:text-[#C6A75E] transition-colors"><Link to="/">Tatito Edverse</Link></li>
-              <li className="hover:text-[#C6A75E] transition-colors"><Link to="/">Tattio Fashions</Link></li>
               <li className="hover:text-[#C6A75E] transition-colors"><Link to="/">Tattio Career Hub</Link></li>
               <li className="hover:text-[#C6A75E] transition-colors"><Link to="/">Tatito Nexus</Link></li>
+
+              <li className="hover:text-[#C6A75E] transition-colors"><Link to="/">Tattio Fashions</Link></li>
               <li className="hover:text-[#C6A75E] transition-colors"><Link to="/">Tatito Civic One</Link></li>
+              <li className="hover:text-[#C6A75E] transition-colors"><Link to="/">Eadvocate Services</Link></li>
+
               <li className="hover:text-[#C6A75E] transition-colors"><Link to="/">Tattio Health+</Link></li>
             </ul>
           </div>
@@ -88,6 +91,9 @@ export function Footer() {
               <li className="hover:text-[#C6A75E] transition-colors"><Link to="/">Open Plots</Link></li>
               <li className="hover:text-[#C6A75E] transition-colors"><Link to="/">Apartments</Link></li>
               <li className="hover:text-[#C6A75E] transition-colors"><Link to="/">Villas</Link></li>
+              <li className="hover:text-[#C6A75E] transition-colors"><Link to="/">Interiors</Link></li>
+              <li className="hover:text-[#C6A75E] transition-colors"><Link to="/">Individal Houses</Link></li>
+              <li className="hover:text-[#C6A75E] transition-colors"><Link to="/">Farm Lands</Link></li>
               <li className="hover:text-[#C6A75E] transition-colors"><Link to="/">Contact</Link></li>
             </ul>
           </div>
@@ -99,17 +105,27 @@ export function Footer() {
               <div className="flex gap-4">
                 <MapPin className="w-4 h-4 text-[#C6A75E] mt-1 shrink-0" />
                 <p className="text-xs text-[#B5B5B5] leading-relaxed tracking-widest uppercase">
-                  VIP Road, Siripuram<br />
-                  Visakhapatnam, AP 530003
+
+
+                  Tirupati, Andhra Pradesh<br />
+
+                  517501, India
+
+
                 </p>
               </div>
               <div className="flex gap-4">
                 <Phone className="w-4 h-4 text-[#C6A75E] shrink-0" />
-                <p className="text-xs text-[#B5B5B5] tracking-widest">+91 91543 55555</p>
+                <p className="text-xs text-[#B5B5B5] tracking-widest">+91 91543 55555 , +91 70937 04706
+
+                </p>
               </div>
               <div className="flex gap-4">
                 <Mail className="w-4 h-4 text-[#C6A75E] shrink-0" />
-                <p className="text-xs text-[#B5B5B5] tracking-widest">contact@tatitodevelopers.com</p>
+                <p className="text-xs text-[#B5B5B5] tracking-widest">tatitoprojects@gmail.com,
+
+                  support@tatitoprojects.com<br />
+                  contact@tatitodevelopers.com</p>
               </div>
             </div>
           </div>

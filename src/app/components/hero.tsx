@@ -7,7 +7,7 @@ import { ArchitecturalCurves } from './ui/ArchitecturalCurves';
 const slides = [
   {
     id: 1,
-    image: 'https://images.unsplash.com/photo-1613490493576-7fde63acd811?q=80&w=2071&auto=format&fit=crop',
+    image: 'https://images.unsplash.com/photo-1617848996044-e82d36c4cff6?q=80&w=1185&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D',
     titlePart1: 'Astra',
     titlePart2: 'Valley',
     subtitle: 'An exquisite sanctuary where curated land holdings meet the whispering winds of the valley, crafted for the true connoisseur.'
@@ -85,9 +85,9 @@ export function Hero() {
         </motion.div>
       </AnimatePresence>
 
-      {/* 2. THE FRAMED BANNER - Sharp Central Image */}
-      <div className="absolute inset-0 px-2 md:px-4 pt-[190px] md:pt-[180px] pb-4 md:pb-8 z-10">
-        <div className="relative w-full h-full rounded-none overflow-hidden border border-white/5 shadow-[0_40px_100px_rgba(0,0,0,0.8)]">
+      {/* 2. THE FRAMED BANNER - Offset below Navbar */}
+      <div className="absolute inset-0 z-10 pt-[168px]">
+        <div className="relative w-full h-full overflow-hidden border-b border-[#C6A75E]/20 shadow-[0_40px_100px_rgba(0,0,0,0.8)]">
           <AnimatePresence mode="wait">
             <motion.div
               key={`framed-${currentSlide}`}
@@ -159,7 +159,7 @@ export function Hero() {
               transition={{ duration: 1, delay: 1 }}
               className="flex flex-col sm:flex-row gap-5"
             >
-              <button
+              {/* <button
                 onClick={() => scrollToSection('projects')}
                 className="group relative px-10 py-4 bg-[#C6A75E] text-black font-bold tracking-[3px] text-[10px] transition-all duration-500 hover:bg-[#E8D8A0] hover:shadow-[0_0_40px_rgba(198,167,94,0.4)] overflow-hidden rounded-lg"
               >
@@ -173,7 +173,7 @@ export function Hero() {
                 className="px-10 py-4 border border-[#C6A75E]/30 text-[#C6A75E] font-bold tracking-[3px] text-[10px] bg-black/40 backdrop-blur-md transition-all duration-500 hover:border-[#C6A75E] hover:bg-[#C6A75E]/10 rounded-lg uppercase"
               >
                 The Tatito Legacy
-              </button>
+              </button> */}
             </motion.div>
           </div>
         </div>

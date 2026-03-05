@@ -56,8 +56,11 @@ export function Contact() {
                     <div>
                       <h4 className="text-sm tracking-[4px] uppercase text-[#F5F5F5] font-bold mb-4">Location</h4>
                       <p className="text-[#7A7A7A] leading-relaxed font-light font-serif text-xl">
-                        VIP Road, Siripuram<br />
-                        Visakhapatnam, AP 530003
+                        Tirupati, Andhra Pradesh<br />
+
+                        517501, India
+
+
                       </p>
                     </div>
                   </div>
@@ -69,8 +72,10 @@ export function Contact() {
                     <div>
                       <h4 className="text-sm tracking-[4px] uppercase text-[#F5F5F5] font-bold mb-4">Email</h4>
                       <p className="text-[#7A7A7A] leading-relaxed font-light font-serif text-xl">
-                        contact@tatitodevelopers.com
-                      </p>
+                        tatitoprojects@gmail.com,
+
+                        support@tatitoprojects.com<br />
+                        contact@tatitodevelopers.com</p>
                     </div>
                   </div>
 
@@ -81,8 +86,7 @@ export function Contact() {
                     <div>
                       <h4 className="text-sm tracking-[4px] uppercase text-[#F5F5F5] font-bold mb-4">Phone</h4>
                       <p className="text-[#7A7A7A] leading-relaxed font-light font-serif text-xl">
-                        +91 91543 55555
-                      </p>
+                        +91 91543 55555 , +91 70937 04706                      </p>
                     </div>
                   </div>
                 </div>
@@ -196,7 +200,7 @@ export function Contact() {
             <div className="absolute bottom-12 left-[-24px] w-32 h-32 border border-[#C6A75E]/30 z-0 pointer-events-none opacity-20" />
           </motion.div>
         </div>
-      </div>
-    </section>
+      </div >
+    </section >
   );
 }

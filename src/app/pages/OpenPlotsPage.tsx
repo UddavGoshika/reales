@@ -2,11 +2,12 @@ import React from 'react';
 import { motion } from 'motion/react';
 import {
     Trees,
-    ArrowRight, MapPin, Ruler,
+    MapPin, Ruler,
     Search, LayoutGrid, List
 } from 'lucide-react';
 import { Link } from 'react-router-dom';
 import { Projects } from '../components/projects';
+import { ProjectTeam } from '../components/ProjectTeam';
 
 export default function OpenPlotsPage() {
     return (
@@ -72,6 +73,7 @@ export default function OpenPlotsPage() {
                     </div>
                 </div>
             </section>
+            <ProjectTeam />
         </div>
     );
 }

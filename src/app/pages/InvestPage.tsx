@@ -2,12 +2,13 @@ import React from 'react';
 import { motion } from 'motion/react';
 import {
     Diamond, TrendingUp, ShieldCheck,
-    ArrowRight, Globe, BarChart3,
+    Globe, BarChart3,
     Gem, PieChart, Landmark
 } from 'lucide-react';
 import { Link } from 'react-router-dom';
 
 import { Projects } from '../components/projects';
+import { ProjectTeam } from '../components/ProjectTeam';
 
 export default function InvestPage() {
     return (
@@ -163,6 +164,7 @@ export default function InvestPage() {
                     </div>
                 </div>
             </section>
+            <ProjectTeam />
         </div>
     );
 }

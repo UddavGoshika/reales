@@ -2,7 +2,7 @@ import { useState, useMemo } from 'react';
 import { motion, AnimatePresence } from 'motion/react';
 import { ImageWithFallback } from './figma/ImageWithFallback';
 import { Link } from 'react-router-dom';
-import { Ruler, MapPin, DollarSign, ArrowRight, Search, Filter, ChevronDown, X, Globe, RotateCcw } from 'lucide-react';
+import { Ruler, MapPin, DollarSign, ArrowRight as ArrowIcon, Search, Filter, ChevronDown, X, Globe, RotateCcw } from 'lucide-react';
 import { ArchitecturalCurves } from './ui/ArchitecturalCurves';
 
 const projects = [
@@ -521,7 +521,7 @@ export function Projects() {
                         ANALYZE INVESTMENT
                       </span>
                       <div className="w-10 h-10 rounded-full border border-white/10 flex items-center justify-center group-hover:border-[#C6A75E] transition-all duration-500">
-                        <ArrowRight className="w-4 h-4 text-[#7A7A7A] group-hover:text-[#C6A75E] transition-all duration-500" />
+                        <ArrowIcon className="w-4 h-4 text-[#7A7A7A] group-hover:text-[#C6A75E] transition-all duration-500" />
                       </div>
                     </div>
                   </div>
@@ -548,7 +548,7 @@ export function Projects() {
           className="mt-20 text-center"
         >
           <button className="px-16 py-5 border border-[#C6A75E]/30 text-[#C6A75E] font-bold tracking-[6px] text-[10px] transition-all duration-500 hover:bg-[#C6A75E] hover:text-black uppercase">
-            EXPLORE FULL CINEMATIC ARCHIVE
+            EXPLORE ALL PROJECTS
           </button>
         </motion.div>
       </div>
